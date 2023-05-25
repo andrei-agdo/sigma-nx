@@ -1,0 +1,46 @@
+@use "@angular/material" as mat;
+@use "./build-theme.scss" as theme;
+
+@include mat.core();
+
+$primary: #1F467F;
+$secondary: #3F51B5;
+$warn: #f00;
+
+:root {
+  --primary: #1F467F;
+  --secondary: #3F51B5;
+}
+
+.cdk-global-scrollblock {
+  overflow-y: auto;
+}
+
+
+.mat-mdc-menu-panel{
+  max-height: 360px !important;
+  overflow: auto;
+}
+
+
+$primary-color: theme.build($primary);
+$secondary-color: theme.build($secondary);
+$warn-color: theme.build($warn);
+
+$Siscom-typography: mat.define-typography-config($font-family: "Roboto",
+  );
+
+$Siscom-primary: mat.define-palette($primary-color);
+$Siscom-accent: mat.define-palette($secondary-color);
+
+$Siscom-warn: mat.define-palette($warn-color);
+
+$Siscom-theme: mat.define-light-theme((color: (primary: $Siscom-primary,
+        accent: $Siscom-accent,
+        warn: $Siscom-warn,
+      ),
+      typography: $Siscom-typography,
+    ));
+
+
+@include mat.all-component-themes($Siscom-theme);

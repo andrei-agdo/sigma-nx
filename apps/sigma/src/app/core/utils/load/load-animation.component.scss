@@ -1,0 +1,106 @@
+
+.overlay {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  opacity: 0.5;
+  background: #0009;
+  z-index: 9;
+  text-align: center;
+  padding-top: 10%;
+}
+
+#loading {
+  width: 79px;
+  height: 26px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+  opacity: 0;
+  animation: fadeIn 1.15s 1;
+  animation-fill-mode: forwards;
+
+}
+
+.cssload-wrap {
+  animation: translate 1150ms infinite ease-in-out alternate, zindex 2300ms infinite ease-in-out;
+  position: absolute;
+}
+
+.cssload-ball {
+  width: 26px;
+  height: 26px;
+  background-color: rgb(227, 116, 107);
+  border-radius: 50%;
+  animation: scale 1150ms infinite ease-in-out alternate;
+  animation-delay: -575ms;
+  transform: scale(0.5);
+}
+
+.cssload-ball:after {
+  content: "";
+  width: 26px;
+  height: 7px;
+  background: #383737b5;
+  position: absolute;
+  top: 37px;
+  border-radius: 50%;
+}
+
+#cssload-wrap2 {
+  animation-delay: -1150ms;
+}
+
+#cssload-ball2 {
+  background-color: #1c87e5;
+  animation-delay: -1725ms;
+}
+
+#cssload-wrap3 {
+  animation-delay: -1725ms;
+}
+
+#cssload-ball3 {
+  background-color: #ffeb3b;
+  animation-delay: -2300ms;
+}
+
+#cssload-wrap4 {
+  animation-delay: -2875ms;
+}
+
+#cssload-ball4 {
+  background-color: #66bb6a;
+  animation-delay: -3450ms;
+}
+
+@keyframes translate {
+  100% {
+    transform: translateX(52px);
+  }
+}
+
+@keyframes scale {
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+@keyframes zindex {
+  25% {
+    z-index: 1;
+  }
+  75% {
+    z-index: -1;
+  }
+}
+
+@keyframes fadeIn {
+  100% {
+    opacity: 1;
+  }
+}

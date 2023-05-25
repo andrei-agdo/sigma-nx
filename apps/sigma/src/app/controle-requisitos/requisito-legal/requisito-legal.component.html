@@ -1,0 +1,95 @@
+<div class='title'>REQUISITO LEGAL</div>
+
+<div class='grid-1-auto gap-10 mobile'>
+  <sigma-nx-filter-button #filterContent>
+    <ng-container *ngIf="filterContent.opened">
+
+      <sigma-nx-input type='combo' [multiple]='true' optionLabel="nome" [options]="temas$ | async" label='Tema' [(ngModel)]="filter.temasId" optionValue='id'></sigma-nx-input>
+
+      <sigma-nx-input type='combo' [multiple]='true' optionLabel="numeroPasta" [options]="temas$ | async" label='N° pasta' [(ngModel)]="filter.numerosPasta" optionValue='numeroPasta'></sigma-nx-input>
+
+
+      <sigma-nx-input type='combo' [multiple]='true' optionLabel="nome" [options]="tipos$ | async" label='Tipo' [(ngModel)]="filter.tiposRequisitosLegaisId" optionValue='id'></sigma-nx-input>
+
+      <sigma-nx-input type='combo' [multiple]='true' optionLabel="nome" [options]="origens$ | async" label='Origem' [(ngModel)]="filter.origensId" optionValue='id'></sigma-nx-input>
+
+      <sigma-nx-input type='combo' [multiple]='true' optionLabel="nome" [options]="aplicabilidades$ | async" label='Aplicabilidade' [(ngModel)]="filter.aplicabilidadesId" optionValue='id'></sigma-nx-input>
+
+      <sigma-nx-input type='combo' [multiple]='true' optionLabel="descricao" [options]="atendimentos$ | async" label='Atendimento' [(ngModel)]="filter.atendimentosId" optionValue='id'></sigma-nx-input>
+
+      <sigma-nx-input label='N° Requisito' [(ngModel)]="filter.numero"></sigma-nx-input>
+
+      <sigma-nx-input type='combo' [multiple]='true' optionLabel="nome" [options]="gestoes$ | async" label='Gestão' [(ngModel)]="filter.gestoesId" optionValue='id'></sigma-nx-input>
+
+      <sigma-nx-input label='Palavra chave' [(ngModel)]="filter.palavraChave"></sigma-nx-input>
+
+      <sigma-nx-input type='date' label='Análise de Requisito' [(ngModel)]="filter.dataAnalise" (ngModelChange)="cancelarAtualizarDataAnalise()"></sigma-nx-input>
+
+      <mat-slide-toggle class="toggle-filter mb-10" [(ngModel)]="filter.ativo" labelPosition='before'>Status</mat-slide-toggle>
+
+      <div class="data">
+        <div class='button' (click)="atualizarDataAnalise()">
+          <mat-icon>more_vert</mat-icon>
+        </div>
+      </div>
+
+      <sigma-nx-search-button (click)='getRequisitos(true)'></sigma-nx-search-button>
+    </ng-container>
+  </sigma-nx-filter-button>
+  <div class='grid-auto-1 gap-10'><img src='assets/icons/excel.png' (click)="exportAsExcel()">
+
+    <div>
+      <button mat-flat-button color='accent' (click)="openRequisitoLegal()">CADASTRAR</button>
+    </div>
+  </div>
+</div>
+
+<div class='spacer-20'></div>
+
+
+<sigma-nx-table *ngIf="requisitosLegais" #table [data]='requisitosLegais' [length]="requisitosLegais.length" (pageChange)='changePage($event)' [(page)]="page">
+
+  <div t-head>Tema</div>
+  <div *tableItem='let requisito'>{{requisito.tema}}</div>
+
+  <div t-head>N° pasta</div>
+  <div *tableItem='let requisito'>{{requisito.numeroPasta}}</div>
+
+  <div t-head>Tipo</div>
+  <div *tableItem='let requisito'>{{requisito.tipoRequisitoLegal}}</div>
+
+  <div t-head>Origem</div>
+  <div *tableItem='let requisito'>{{requisito.origem}}</div>
+
+  <div t-head>Data</div>
+  <div *tableItem='let requisito'>{{requisito.data | date : "dd/MM/yyyy"}}</div>
+
+  <div t-head>Requisito/Sumário</div>
+  <div *tableItem='let requisito'>{{requisito.sumario}}</div>
+
+  <div t-head>Aplicabilidade</div>
+  <div *tableItem='let requisito'>{{requisito.aplicabilidade}}</div>
+
+  <div t-head>N° Requisito</div>
+  <div *tableItem='let requisito'>{{requisito.numero}}</div>
+
+  <div t-head>Gestão</div>
+  <div *tableItem='let requisito'>{{requisito.gestoes}}</div>
+
+  <div t-head>Análise de Requisitos</div>
+  <div *tableItem='let requisito'>{{requisito.dataAnalise | date : "dd/MM/yyyy" }}</div>
+
+
+  <div t-head>Status</div>
+  <div *tableItem='let item'>
+    <mat-slide-toggle (change)="changeStatus(item)" [checked]="item.ativo"></mat-slide-toggle>
+  </div>
+
+  <div t-head stickyEnd>Ação</div>
+  <div *tableItem='let item' class="acoes">
+    <button mat-mini-fab (click)='openRequisitoLegal(item)'>
+      <mat-icon>edit</mat-icon>
+    </button>
+  </div>
+
+</sigma-nx-table>

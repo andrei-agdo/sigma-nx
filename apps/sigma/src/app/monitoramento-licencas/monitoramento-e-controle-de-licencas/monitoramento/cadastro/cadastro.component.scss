@@ -1,0 +1,20 @@
+.numero-pasta {
+  flex: 0;
+  min-width: 130px;
+
+  [prefix] {
+    width: 80px;
+    display: block;
+  }
+}
+
+.anos {
+  flex: 0;
+  min-width: 80px;
+}
+
+.divider {
+  margin-top: 40px;
+  border-bottom: 1px solid rgba(98, 101, 108, 0.25);
+  margin-bottom: 12px;
+}

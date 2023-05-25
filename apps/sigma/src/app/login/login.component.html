@@ -1,0 +1,24 @@
+<div class="background">
+  <mat-card>
+    <mat-card-header>
+      <img class="logo-cebrace" width="110px" src="assets/images/cebrace_logo.png">
+    </mat-card-header>
+    <mat-card-content>
+      <form (keyup.enter)="logar()">
+        <mat-form-field appearance="outline">
+          <mat-label>Conecte-se</mat-label>
+          <input matInput [(ngModel)]="authLogin.login" name="login" placeholder="Conecte-se">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Senha</mat-label>
+          <input matInput [type]="hidePassword ? 'password' : 'text'" [(ngModel)]="authLogin.password" name="password"
+            placeholder="Senha">
+          <button mat-icon-button type="button" matSuffix (click)="hidePassword = !hidePassword">
+            <mat-icon>{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+        </mat-form-field>
+        <button mat-raised-button color="primary" class='logar' (click)="logar()">Entrar</button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

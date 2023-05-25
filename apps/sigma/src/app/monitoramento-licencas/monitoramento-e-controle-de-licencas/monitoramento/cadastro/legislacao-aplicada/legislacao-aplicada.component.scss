@@ -1,0 +1,44 @@
+.legislacao {
+  .titulo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .opened {
+      transform: rotate(90deg);
+    }
+  }
+
+  .lista {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-top: 1px solid rgba(98, 101, 108, 0.25);
+    padding-bottom: 14px;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+
+    .item {
+      padding: 7px 14px;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      letter-spacing: 0.5px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      @media (min-width: 768px) {
+        &:nth-child(odd) {
+          border-right: 1px solid rgba(98, 101, 108, 0.25);
+        }
+      }
+
+      mat-icon {
+        color: rgba(84, 84, 84, 0.59);
+        cursor: pointer;
+      }
+    }
+  }
+}

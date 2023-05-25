@@ -1,0 +1,63 @@
+<div class="title f-16 mb-16 grid-1-auto">
+  <div>AÇÃO:</div>
+  <div>
+    <button mat-icon-button class="green-button plus" (click)="openAcao()"><mat-icon>add</mat-icon></button>
+  </div>
+</div>
+<sigma-nx-table #table [data]="acoes" [hidePaginator]="true">
+
+  <div t-head>Descrição</div>
+  <div *tableItem='let item'>{{item.descricao}}</div>
+
+  <div t-head>Área</div>
+  <div *tableItem='let item'>{{item.departamento.nome}}</div>
+
+  <div t-head>Responsável/Fornecedor</div>
+  <div *tableItem='let item'>{{item.responsavel?item.responsavel.nome: item.fornecedor.nome}}</div>
+
+  <div t-head>Prazo</div>
+  <div *tableItem='let item'>{{item.prazo | date: 'dd/MM/yyyy'}}</div>
+
+  <div t-head>Concluído</div>
+  <div *tableItem='let item'>
+    <span [matMenuTriggerFor]="menu" class="selecionar-porcentagem">
+      {{ item.concluido }}%
+    </span>
+    <mat-menu #menu="matMenu" class="selecao-porcentagem">
+      <button mat-menu-item *ngFor="let porcentagem of porcentagens" (click)='alterarPorcetagemConcluido(item, porcentagem)'>
+        <span>{{ porcentagem }}% <mat-icon *ngIf="item.concluido == porcentagem">check</mat-icon></span>
+      </button>
+    </mat-menu>
+  </div>
+
+  <div t-head stickyEnd>Follow Up</div>
+  <div *tableItem='let item' (click)='table.expandRow(item)'><mat-icon class='blue'>chat_bubble</mat-icon></div>
+
+  <div *expandedItem='let item'>
+    <div class='m-20'>
+      06/10/2023 - um texto de follow up pra testar o quão grande ficaria na tela pensando em vários follow ups e vários textos grande, considerando que o modal de cadastro é multi linear, possibilitando assim várias linhas de texto.<br><br>
+      06/10/2023 - um texto de follow up pra testar o quão grande ficaria na tela pensando em vários follow ups e vários textos grande, considerando que o modal de cadastro é multi linear, possibilitando assim várias linhas de texto.<br><br>
+      06/10/2023 - um texto de follow up pra testar o quão grande ficaria na tela pensando em vários follow ups e vários textos grande, considerando que o modal de cadastro é multi linear, possibilitando assim várias linhas de texto.<br><br>
+    </div>
+  </div>
+
+
+  <div t-head stickyEnd="">Ações</div>
+  <div *tableItem='let item'>
+    <ng-container>
+      <button mat-mini-fab [matMenuTriggerFor]="menu">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)='openAcao(item)'>
+          <mat-icon class='blue'>edit</mat-icon> Editar
+        </button>
+        <button mat-menu-item><mat-icon class='green'>check</mat-icon>Aprovar</button>
+        <button mat-menu-item><mat-icon class='red'>close</mat-icon>Rejeitar</button>
+        <button mat-menu-item><mat-icon class='grey'>mail</mat-icon>Enviar e-mail</button>
+        <button mat-menu-item><mat-icon class='blue'>chat_bubble</mat-icon>Acompanhamento</button>
+        <button mat-menu-item><mat-icon class='red'>delete</mat-icon>Excluir</button>
+      </mat-menu>
+    </ng-container>
+  </div>
+</sigma-nx-table>

@@ -1,0 +1,24 @@
+<div class="title f-16 mb-16 grid-1-auto">
+  <div>PRAZO:</div>
+  <div>
+    <button mat-icon-button class="green-button plus" (click)="openPrazo()"><mat-icon>add</mat-icon></button>
+  </div>
+</div>
+
+<sigma-nx-table #table [data]="prazos" [hidePaginator]="true">
+  <div t-head sticky>Data Expedição:</div>
+  <div *tableItem='let item'>{{item.dataExpedicao | date: 'dd/MM/yyyy'}}</div>
+
+  <div t-head>Data Vencimento:</div>
+  <div *tableItem='let item'>
+    <span *ngIf="statusVencimento">{{(item.dataVencimento | date: 'dd/MM/yyyy')}}</span>
+    <span *ngIf="!statusVencimento">{{vencimento}}</span>
+  </div>
+
+  <div t-head>Ações</div>
+  <div *tableItem='let item'>
+    <button mat-mini-fab (click)='openPrazo(item)'>
+      <mat-icon>edit</mat-icon>
+    </button>
+  </div>
+</sigma-nx-table>

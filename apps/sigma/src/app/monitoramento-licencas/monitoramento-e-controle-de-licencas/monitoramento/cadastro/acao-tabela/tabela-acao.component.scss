@@ -1,0 +1,58 @@
+.plus {
+  border-radius: 4px
+}
+
+.acoes {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+
+  button {
+    width: 20px;
+    height: 20px;
+    overflow: hidden;
+
+    mat-icon {
+      font-size: 17px;
+      line-height: 25px;
+    }
+  }
+}
+
+.selecionar-porcentagem {
+  cursor: pointer;
+  color: #545454;
+  text-decoration: underline;
+}
+
+::ng-deep .selecao-porcentagem button mat-icon {
+  position: absolute !important;
+}
+
+.yellow {
+  background: rgba(237, 137, 20, 0.86) !important
+}
+
+.grey {
+  color: #545454;
+  background: none
+}
+
+.green {
+  color: #29bd1e;
+}
+
+.blue {
+  color: #3F51B5;
+}
+
+.red {
+  color: #FC0000
+}
+
+:host {
+  ::ng-deep .small-menu {
+    max-height: 300px;
+    overflow: scroll;
+  }
+}

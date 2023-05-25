@@ -1,0 +1,52 @@
+<div class="dialog">
+  <div class="title grid-1-auto">
+    <div>{{!acao.id ? 'Cadastrar' : 'Editar'}}</div>
+    <button mat-button [mat-dialog-close]="false"><mat-icon>close</mat-icon></button>
+  </div>
+  <div class="body">
+    <sigma-nx-form #form>
+      <mat-checkbox [(ngModel)]='acao.eFornecedor'>Fornecedor</mat-checkbox>
+      <div class='spacer-14'></div>
+      <div class="row mobile">
+
+        <sigma-nx-input required *ngIf="!acao.eFornecedor" [(ngModel)]="acao.responsavel" label='Responsável' type="combo" [options]="responsaveis$ | async" optionLabel="nome">
+          <span required>Insira um responsável</span>
+        </sigma-nx-input>
+
+        <sigma-nx-input required *ngIf="acao.eFornecedor" [(ngModel)]="acao.fornecedor" label='Fornecedor' type="combo" [options]="fornecedores$ | async" optionLabel="nome">
+          <span required>Insira um fornecedor</span>
+        </sigma-nx-input>
+
+
+        <sigma-nx-input required [(ngModel)]="acao.departamento" label='Área' type="combo" [options]="departamentos$ | async" optionLabel="nome">
+          <span required>Selecione uma área</span>
+        </sigma-nx-input>
+
+        <sigma-nx-input required [(ngModel)]="acao.prazo" label='Prazo' type="date">
+          <span required>Insira um prazo</span>
+        </sigma-nx-input>
+      </div>
+      <div class='inline-flex mobile'>
+        <sigma-nx-input required [(ngModel)]="acao.vencimento" label='Vencimento' type="number">
+          <span required>Insira um vencimento</span>
+        </sigma-nx-input>
+
+        <sigma-nx-input required [(ngModel)]="acao.concluido" label='Concluído' type="combo" [options]='porcentagens' optionLabel="">
+          <span required>Selecione a % de concluído</span>
+        </sigma-nx-input>
+      </div>
+
+      <sigma-nx-input required [(ngModel)]="acao.descricao" label='Descrição' type="textarea">
+        <span required>Insira uma descrição</span>
+      </sigma-nx-input>
+
+
+    </sigma-nx-form>
+  </div>
+
+  <div mat-dialog-actions align="end">
+    <button mat-raised-button color="warn" [mat-dialog-close]='false'>Cancelar</button>
+    <button mat-raised-button class="green-button" (click)="salvarAcao(form)">
+      Salvar
+    </button>
+  </div>

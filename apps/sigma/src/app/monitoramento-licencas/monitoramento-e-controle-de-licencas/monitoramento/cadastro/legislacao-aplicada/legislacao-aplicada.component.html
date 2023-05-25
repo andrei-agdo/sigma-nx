@@ -1,0 +1,32 @@
+<sigma-nx-input label='Legislação Aplicada' (input)="search($event.target.value)" (ngModelChange)="addLegislacaoAplicada($event)" type='autocomplete' [options]="legislacoes()" optionLabel="tema" optionValue='id' [hideHint]="true">
+  <ng-template #itemTemplate let-legislacao>
+    N° {{ legislacao.numero }} | Tema: N°{{ legislacao.numeroPasta }} - {{ legislacao.tema}}
+  </ng-template>
+  <ng-template #noItens>
+    <ng-container *ngIf="trazerTodos || !numeroPasta">
+      Sem legislações disponíveis para a busca
+    </ng-container>
+    <ng-container *ngIf="!trazerTodos && numeroPasta">
+      Sem legislações para a pasta N° {{numeroPasta}}, para obter todos, clique em "Trazer todos"
+    </ng-container>
+
+  </ng-template>
+</sigma-nx-input>
+<mat-checkbox [(ngModel)]='trazerTodos' (ngModelChange)="filterTrazerTodos()">Trazer todos</mat-checkbox>
+<div class="spacer-22"></div>
+<div class='mat-elevation-z8 legislacao'>
+  <div class="titulo padding-14 pt-14 pb-14 f-11">
+    Legislações: {{ legislacaoAplicada.length }}
+    <mat-icon [class.opened]='opened' (click)="opened = !opened">
+      keyboard_arrow_right
+    </mat-icon>
+  </div>
+  <div class="lista" *ngIf="opened">
+    <div class="item" *ngFor="let legislacao of legislacaoAplicada; let i = index">
+      N° {{ legislacao.numero }} | Tema: N°{{ legislacao.numeroPasta }} - {{ legislacao.tema}}
+      <mat-icon (click)="removeLegislacaoAplicada(legislacao)">
+        delete
+      </mat-icon>
+    </div>
+  </div>
+</div>

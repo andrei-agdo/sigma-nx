@@ -1,0 +1,100 @@
+<div class='title'>MONITORAMENTO E CONTROLE DE LICENÇA</div>
+
+<div class='grid-1-auto gap-10 mobile'>
+  <sigma-nx-filter-button #filterContent>
+    <ng-container *ngIf="filterContent.opened">
+      <!-- data ultima atualização -->
+      <sigma-nx-input [(ngModel)]="filter.dataUltimaAtualizacao" label='Última atualização' type="date" />
+
+      <!-- numero pasta -->
+      <sigma-nx-input [(ngModel)]="filter.numeroPasta" label='N° Pasta' type="text" />
+
+      <!-- temas -->
+      <sigma-nx-input [(ngModel)]="filter.tema" label='Tema' [options]="temas$ | async" optionLabel='nome' optionValue='id' type="combo" />
+
+      <!-- gestoes -->
+      <sigma-nx-input [(ngModel)]="filter.gestao" label='Gestão' [options]="gestoes$ | async" optionLabel='nome' optionValue='id' type="combo" />
+
+      <!-- orgao controle -->
+      <sigma-nx-input [(ngModel)]="filter.orgaoControle" label='Órgão de Controle' [options]="orgaosControle$ | async" type="combo" optionLabel='nome' optionValue='id' />
+
+      <!-- responsavel -->
+      <sigma-nx-input [(ngModel)]="filter.responsavel" label='Responsável Conval' [options]="responsaveis$ | async" type="combo" optionLabel='nome' optionValue='id' />
+
+      <!-- responsavelChecklislt -->
+      <sigma-nx-input [(ngModel)]="filter.responsavel" label='Responsável checklist' [options]="responsaveis$ | async" type="combo" optionLabel='nome' optionValue='id' />
+
+      <!-- vencimento -->
+      <sigma-nx-input [(ngModel)]="filter.vencimento" label='Vencimento' [options]="vencimentos$ | async" optionLabel='nome' type="combo" optionValue='id' />
+
+      <!-- documento -->
+      <sigma-nx-input [(ngModel)]="filter.documento" label='Documento' [options]="documentos$ | async" type="combo" optionLabel='nome' optionValue='id' />
+
+      <!-- empresa -->
+      <sigma-nx-input [(ngModel)]="filter.empresa" label='Empresa' [options]="empresas$ | async" type="combo" optionLabel='nome' optionValue='id' />
+
+      <!-- fornecedor -->
+      <sigma-nx-input [(ngModel)]="filter.fornecedor" label='Fornecedor' [options]="fornecedores$ | async" optionLabel='nome' optionValue='id' type="combo" />
+
+      <!-- dias pra vencimento -->
+      <sigma-nx-input [(ngModel)]="filter.diasParaVencimento" label='Dias para vencimento' type="number" />
+
+      <!-- data -->
+      <sigma-nx-input [(ngModel)]="filter.data" label='Data' type="date" />
+
+
+
+      <sigma-nx-search-button (click)='getMonitoramentoControleLicencas(true)'></sigma-nx-search-button>
+    </ng-container>
+  </sigma-nx-filter-button>
+  <div>
+    <div class='grid-auto-1 gap-10'><img src='assets/icons/excel.png' (click)="exportAsExcel()">
+      <div><button mat-flat-button color='accent' routerLink="novo">CADASTRAR</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class='spacer-20'></div>
+
+<sigma-nx-table *ngIf="monitoramentoControleLicencas" #table [data]='monitoramentoControleLicencas' [length]="monitoramentoControleLicencas.length" (pageChange)='changePage($event)' [(page)]="page">
+
+  <div t-head>N° Pasta</div>
+  <div *tableItem='let item'>{{item.tema?.numeroPasta}}</div>
+
+  <div t-head>Título</div>
+  <div *tableItem='let item'>{{item.nome}}</div>
+
+  <div t-head>Tema</div>
+  <div *tableItem='let item'>{{item.tema?.nome}}</div>
+
+  <div t-head>Assunto</div>
+  <div *tableItem='let item'>{{item.assunto}}</div>
+
+  <div t-head>Resp. Geral</div>
+  <div *tableItem='let item'>{{item.responsavel?.nome}}</div>
+
+  <div t-head>Gestão</div>
+  <div *tableItem='let item'>{{item.gestao?.nome}}</div>
+
+  <div t-head>Orgão de Controle</div>
+  <div *tableItem='let item'>{{item.orgaoControle?.nome}}</div>
+
+  <div t-head>Prazo</div>
+  <div *tableItem='let item'>{{item.vencimento?.nome }}</div>
+
+  <div t-head stickyEnd>Ação</div>
+  <div *tableItem='let item' class="acoes grid-1-1 align-center">
+    <div (click)="table.expandRow(item)">
+      <mat-icon>keyboard_arrow_right</mat-icon>
+    </div>
+    <button mat-mini-fab [routerLink]="item.id+'/editar'">
+      <mat-icon>edit</mat-icon>
+    </button>
+  </div>
+
+  <div *expandedItem='let item'>
+    <tabela-acoes [acoes]="item.acoes" />
+  </div>
+
+</sigma-nx-table>

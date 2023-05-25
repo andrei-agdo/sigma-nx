@@ -1,0 +1,128 @@
+<div class="title grid-1-auto mobile">
+  <div>{{!requisitoLegal.id?'Cadastrar' : 'Editar'}} REQUISITO LEGAL</div>
+  <div class="gap-10 row">
+    <button mat-raised-button (click)="return()" color="warn">Cancelar</button>
+    <button mat-raised-button class="green-button" (click)="salvarRequisitoLegal(form)">
+      Salvar
+    </button>
+  </div>
+
+</div>
+
+<sigma-nx-form #form>
+  <div class="mobile flex">
+
+    <sigma-nx-input label='Tipo' type='combo' required optionLabel="nome" [options]="tipos$ | async" [(ngModel)]="requisitoLegal.tipoRequisitoLegalId" optionValue='id'>
+      <span required>Selecione um tipo</span>
+    </sigma-nx-input>
+
+    <sigma-nx-input label='Origem' type='combo' required optionLabel="nome" [options]="origens$ | async" [(ngModel)]="requisitoLegal.origemId" optionValue='id'>
+      <span required>Selecione uma origem</span>
+    </sigma-nx-input>
+
+    <sigma-nx-input label='Data' type='date' required [(ngModel)]="requisitoLegal.data">
+      <span required>Insira uma data</span>
+    </sigma-nx-input>
+
+    <sigma-nx-input *ngIf="temas$ | async as temas" label='Tema' type='combo' optionLabel="nome" optionValue='id' [options]="temas" [(ngModel)]="requisitoLegal.temaId" (ngModelChange)="selectTema($event,temas)" required>
+      <span required>Selecione um tema</span>
+    </sigma-nx-input>
+
+    <sigma-nx-input disabled class="numero-pasta" [(ngModel)]="numeroPasta">
+      <span prefix>&nbsp;&nbsp;N° pasta</span>
+    </sigma-nx-input>
+
+    <sigma-nx-input label='Gestão' type='combo' optionLabel="nome" [options]="gestoes$ | async" [(ngModel)]="requisitoLegal.gestoesId" [multiple]="true" optionValue='id' required>
+      <span required>Selecione uma gestão</span>
+    </sigma-nx-input>
+
+    <sigma-nx-input label='Aplicabilidade' type='combo' optionLabel="nome" [options]="aplicabilidades$ | async" [(ngModel)]="requisitoLegal.aplicabilidadeId" optionValue='id' required>
+      <span required>Selecione uma aplicabilidade</span>
+    </sigma-nx-input>
+
+    <sigma-nx-input label='N° requisito' required [(ngModel)]="requisitoLegal.numero" type='number'>
+      <span required>Insira um número</span>
+    </sigma-nx-input>
+  </div>
+  <div class='row mobile'>
+    <sigma-nx-input label='Requisito/sumário' type='textarea' [(ngModel)]="requisitoLegal.sumario" required>
+      <span required>Insira um sumário</span>
+    </sigma-nx-input>
+
+    <sigma-nx-input label='Itens aplicáveis' type='textarea' [(ngModel)]="requisitoLegal.itemAplicavel" required>
+      <span required>Insira um item aplicável</span>
+    </sigma-nx-input>
+  </div>
+  <div class='flex'>
+    <sigma-nx-input label='Departamento' type='combo' optionLabel="nome" [multiple]='true' [options]="departamentos$ | async" [(ngModel)]="requisitoLegal.departamentosId" optionValue='id' required>
+      <span required>Selecione um departamento</span>
+    </sigma-nx-input>
+
+    <sigma-nx-input label='Âmbito' type='combo' optionLabel="nome" [options]="ambitos$ | async" [(ngModel)]="requisitoLegal.ambitoId" optionValue='id' required>
+      <span required>Selecione um âmbito</span>
+    </sigma-nx-input>
+
+    <sigma-nx-input label='Atendimento' type='combo' optionLabel="descricao" [options]="atendimentos$ | async" [(ngModel)]="requisitoLegal.atendimentoId" (selectedOption)="selectAtendimento($event)" optionValue='id' required>
+      <span required>Selecione um atendimento</span>
+    </sigma-nx-input>
+
+  </div>
+
+  <div class="mb-20 row mobile">
+    <div>
+      <sigma-nx-input label='GACP' [required]="gacpObrigatorio" [error]='gacpObrigatorio && requisitoLegal.gacpsId?.length==0' type='autocomplete' optionLabel="nome" [options]="gacps()" (input)="termGacp.set($event.target.value)" (ngModelChange)="addGacp($event)">
+        <span error>Quando possuir um antendimento, é necessário selecionar um GACP</span>
+
+        <ng-template let-gacp #itemTemplate>
+          <div class="row">
+            <div>{{gacp.codigo}} - {{gacp.nome}}</div>
+          </div>
+        </ng-template>
+
+      </sigma-nx-input>
+
+      <div class='lista-selecionada mat-elevation-z6 grid-1-1'>
+        <div *ngFor="let gacp of requisitoLegal.gacpsId" class="grid-1-auto">
+          {{gacp.codigo}} - {{gacp.nome}}
+          <mat-icon (click)="removeGacp(gacp)">
+            delete
+          </mat-icon>
+        </div>
+      </div>
+      <br>
+    </div>
+    <div>
+      <sigma-nx-input label='Evidências de atendimento PM' type='autocomplete' optionLabel="nome" [options]="evidencias()" (input)="termEvidencia.set($event.target.value)" (ngModelChange)="addEvidencia($event)">
+
+        <ng-template let-evidencia #itemTemplate>
+          <div class="row">
+            <div>Tema:{{evidencia.tema?.nome}} - Pasta N°:{{evidencia.tema?.numeroPasta}} - {{evidencia.nome}}</div>
+          </div>
+        </ng-template>
+
+      </sigma-nx-input>
+
+      <div class='lista-selecionada mat-elevation-z6 grid-1-1'>
+        <div *ngFor="let evidencia of requisitoLegal.controlesLicencasId" class="grid-1-auto">
+          Tema: {{evidencia.tema?.nome}} - Pasta N°:{{evidencia.tema?.numeroPasta}} - {{evidencia.nome}}
+          <mat-icon (click)="removeEvidencia(evidencia)">
+            delete
+          </mat-icon>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class='row mobile'>
+    <sigma-nx-input type='textarea' label='Alterações' [(ngModel)]="requisitoLegal.alteracao"></sigma-nx-input>
+
+    <sigma-nx-input type='textarea' label='Observações' [(ngModel)]="requisitoLegal.observacoes"></sigma-nx-input>
+  </div>
+
+  <div>
+    <mat-slide-toggle class="toggle-filter mb-10" [(ngModel)]="requisitoLegal.ativo" labelPosition='before'>Status</mat-slide-toggle>
+  </div>
+
+
+
+</sigma-nx-form>

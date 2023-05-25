@@ -1,0 +1,19 @@
+.menu {
+  display: flex;
+  gap:16px;
+  margin-bottom: 20px;
+
+  button {
+    height: 52px;
+
+    &.active {
+      background: #3F51B5;
+      color: #fff;
+    }
+
+    &:not(.active) {
+      background: rgba($color: #000000, $alpha: 0.12);
+      color: rgba($color: #000000, $alpha: 0.26)
+    }
+  }
+}

@@ -1,0 +1,25 @@
+<div class="dialog" *ngIf="prazo">
+  <div class="title grid-1-auto">
+    <div>{{!prazo.id ? 'Cadastrar' : 'Editar'}}</div>
+    <button mat-button [mat-dialog-close]="false"><mat-icon>close</mat-icon></button>
+  </div>
+  <div class="body">
+    <sigma-nx-form #form>
+      <div class="row mobile">
+
+        <sigma-nx-input required [(ngModel)]="prazo.dataExpedicao" (ngModelChange)="setVencimento()" label='Data expedição' type="date" />
+
+        <sigma-nx-input readonly [(ngModel)]="prazo.dataVencimento" label='Data vencimento' type="date" />
+
+      </div>
+
+    </sigma-nx-form>
+  </div>
+
+  <div mat-dialog-actions align="end">
+    <button mat-raised-button color="warn" [mat-dialog-close]='false'>Cancelar</button>
+    <button mat-raised-button class="green-button" (click)="salvarPrazo(form)">
+      Salvar
+    </button>
+  </div>
+</div>

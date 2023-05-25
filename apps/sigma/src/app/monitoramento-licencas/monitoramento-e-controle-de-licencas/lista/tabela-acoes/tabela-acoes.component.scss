@@ -1,0 +1,26 @@
+:host {
+  ::ng-deep {
+    sigma-nx-table {
+      width: 100%;
+
+      .tr-header {
+        background: none !important;
+
+        .header {
+          color: #62656C !important;
+          font-family: 'Roboto';
+          font-style: normal;
+          font-weight: 700;
+          font-size: 14px;
+          line-height: 20px;
+          font-size: 14px;
+          letter-spacing: 0.4px;
+        }
+      }
+
+      table {
+        background: rgba(217, 217, 217, 0.57) !important;
+      }
+    }
+  }
+}

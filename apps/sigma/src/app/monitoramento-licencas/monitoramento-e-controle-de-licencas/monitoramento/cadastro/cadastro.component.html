@@ -1,0 +1,101 @@
+<div class="title grid-1-auto mobile">
+  <div>{{!monitoramentoControleLicenca.id?'CADASTRO DE ' : ''}}MONITORAMENTO E CONTROLE DE LICENÇA</div>
+  <div class="gap-10 row">
+    <button mat-raised-button [routerLink]="['/monitoramento-licencas','monitoramento-e-controle-de-licencas']" routerLinkActive="router-link-active" color="warn">Cancelar</button>
+    <button mat-raised-button class="green-button" (click)="createMonitoramentoControleLicenca(form)" *ngIf="!monitoramentoControleLicenca.id">
+      Avançar
+    </button>
+    <button mat-raised-button class="green-button" (click)="salvarMonitoramentoControleLicenca(form)" *ngIf="monitoramentoControleLicenca.id">
+      Salvar
+    </button>
+  </div>
+</div>
+
+<sigma-nx-form #form>
+  <div class="flex">
+    <sigma-nx-input label='Título' class="flex-2" required [(ngModel)]="monitoramentoControleLicenca.nome">
+      <span required>Insira um título</span>
+    </sigma-nx-input>
+
+    <sigma-nx-input label='Referência' [(ngModel)]="monitoramentoControleLicenca.referencia" type='combo' [options]="referencias$ | async" optionLabel="nome">
+      <span required>Selecione uma referência</span>
+    </sigma-nx-input>
+
+    <!-- tema -->
+    <sigma-nx-input label='Tema' type='combo' [options]="temas$ | async" optionLabel="nome" optionValue='id' [(ngModel)]="monitoramentoControleLicenca.temaId" (selectedOption)="selectTema($event)">
+      <span required>Selecione um tema</span>
+    </sigma-nx-input>
+
+    <!-- numero pasta -->
+    <sigma-nx-input class="numero-pasta" disabled [ngModel]="monitoramentoControleLicenca.numeroPasta">
+      <span prefix>&nbsp;&nbsp;N° pasta:</span>
+    </sigma-nx-input>
+
+    <!-- documento -->
+    <sigma-nx-input label='Documento' [(ngModel)]="monitoramentoControleLicenca.documento" type='combo' [options]="documentos$ | async" optionLabel="nome">
+    </sigma-nx-input>
+
+
+    <!-- responsabel -->
+    <sigma-nx-input label='Responsável' [(ngModel)]="monitoramentoControleLicenca.responsavel" type='combo' [options]="responsaveis$ | async" optionLabel="nome">
+      <span required>Selecione um responsável</span>
+    </sigma-nx-input>
+
+    <!-- orgao controle -->
+    <sigma-nx-input label='Órgão de Controle' [(ngModel)]="monitoramentoControleLicenca.orgaoControle" type='combo' [options]="orgaosControle$ | async" optionLabel="nome">
+    </sigma-nx-input>
+
+    <!-- gestao -->
+    <sigma-nx-input label='Gestão' [(ngModel)]="monitoramentoControleLicenca.gestao" type='combo' [options]="gestoes$ | async" optionLabel="nome">
+    </sigma-nx-input>
+
+    <!-- empresa -->
+    <sigma-nx-input label='Empresa' [(ngModel)]="monitoramentoControleLicenca.empresa" type='combo' [options]="empresas$ | async" optionLabel="nome">
+    </sigma-nx-input>
+
+    <!-- fornecedor -->
+    <sigma-nx-input *ngIf="monitoramentoControleLicenca.empresa?.nome==='Fornecedor'" label='Fornecedor' [(ngModel)]="monitoramentoControleLicenca.fornecedor" type='combo' [options]="fornecedores$ | async" optionLabel="nome">
+    </sigma-nx-input>
+
+  </div>
+
+  <div class='row mobile'>
+
+    <!-- assunto textarea -->
+    <sigma-nx-input type="textarea" [(ngModel)]="monitoramentoControleLicenca.assunto" label="Assunto"></sigma-nx-input>
+
+    <div>
+      <div class="flex">
+
+        <!-- por prazo combo -->
+        <sigma-nx-input label='Vencimento' [(ngModel)]="monitoramentoControleLicenca.vencimento" type='combo' [options]="vencimentos$ | async" optionLabel="nome" (ngModelChange)="atualizaVencimento()">
+        </sigma-nx-input>
+
+        <ng-container *ngIf="vencimentoPorPrazo">
+          <!-- Periodicidade -->
+          <sigma-nx-input label='Periodicidade' [(ngModel)]="monitoramentoControleLicenca.periodicidade" type='combo' [options]="periodicidades$ | async" optionLabel="nome">
+          </sigma-nx-input>
+
+          <!-- anos number -->
+          <sigma-nx-input label='Anos' class="anos" *ngIf="monitoramentoControleLicenca.periodicidade?.nome === 'Outros'" [(ngModel)]="monitoramentoControleLicenca.anos" type='number'>
+          </sigma-nx-input>
+        </ng-container>
+      </div>
+      <div>
+        <sigma-nx-legislacao-aplicada [numeroPasta]="monitoramentoControleLicenca.numeroPasta" [(legislacaoAplicada)]="monitoramentoControleLicenca.legislacaoAplicada" />
+      </div>
+    </div>
+
+  </div>
+
+</sigma-nx-form>
+
+<ng-container *ngIf="monitoramentoControleLicenca.id">
+
+  <div class='divider'></div>
+  <sigma-nx-tabela-prazo [(prazos)]='monitoramentoControleLicenca.prazos' [periodicidade]="monitoramentoControleLicenca.periodicidade" [vencimento]='monitoramentoControleLicenca.vencimento?.nome' [anos]="monitoramentoControleLicenca.anos" />
+
+  <div class='divider'></div>
+  <sigma-nx-tabela-acao *ngIf="vencimentoPorPrazo" [(acoes)]='monitoramentoControleLicenca.acoes' />
+
+</ng-container>

@@ -1,0 +1,18 @@
+.overlay {
+  transition: all ease .4s;
+}
+
+.show {
+  opacity: 1 !important;
+  z-index: 9999 !important;
+}
+
+.hiding {
+  opacity: 0;
+}
+
+.hide {
+  opacity: 0 !important;
+  z-index: -1 !important;
+  display: none;
+}

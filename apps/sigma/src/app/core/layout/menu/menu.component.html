@@ -1,0 +1,8 @@
+<div class='logo' [class.opened]='opened'>
+  <img src='assets/images/cebrace.png' />
+</div>
+
+<div class="menu" [class.opened]="opened">
+  <sigma-nx--menu-item *ngFor='let modulo of modulos' [modulo]="modulo" (menuItemClick)="itemClick.emit()" [opened]="opened">
+  </sigma-nx--menu-item>
+</div>

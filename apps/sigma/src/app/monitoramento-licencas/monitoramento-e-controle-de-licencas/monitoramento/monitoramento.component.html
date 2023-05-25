@@ -1,0 +1,13 @@
+<div class="menu" *ngIf="monitoramentoId">
+  <button mat-raised-button routerLinkActive='active' routerLink="editar">
+    CADASTRO
+  </button>
+  <button mat-raised-button routerLinkActive='active' routerLink="historico">
+    HISTÓRICO
+  </button>
+  <button mat-raised-button routerLinkActive='active' routerLink="arquivos">
+    ARQUIVOS
+  </button>
+</div>
+
+<router-outlet></router-outlet>

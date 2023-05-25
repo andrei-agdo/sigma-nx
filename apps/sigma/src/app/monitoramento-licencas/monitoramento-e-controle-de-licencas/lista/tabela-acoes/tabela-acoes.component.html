@@ -1,0 +1,26 @@
+<sigma-nx-table #table [hidePaginator]="true" [data]='acoes'>
+
+  <div t-head sticky>Descrição</div>
+  <div *tableItem='let item'>{{item.descricao}}</div>
+
+  <!-- area -->
+  <div t-head>Área</div>
+  <div *tableItem='let item'>{{item.departamento.nome}}</div>
+
+  <!-- responsavel -->
+  <div t-head>Responsável</div>
+  <div *tableItem='let item'>{{item.responsavel?item.responsavel.nome: item.fornecedor.nome}}</div>
+
+  <!-- prazo -->
+  <div t-head>Prazo</div>
+  <div *tableItem='let item'>{{item.prazo | date: 'dd/MM/yyyy'}}</div>
+
+  <!-- conluido -->
+  <div t-head>Concluído</div>
+  <div *tableItem='let item'>{{item.concluido }}%</div>
+
+  <!-- followUp -->
+  <div t-head>Follow Up</div>
+  <div *tableItem='let item'>{{item.followUp}}</div>
+
+</sigma-nx-table>

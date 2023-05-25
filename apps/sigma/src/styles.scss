@@ -1,1 +1,275 @@
-/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+}
+
+* {
+  font-family: Roboto;
+}
+
+
+.align-center{
+  align-items: center;
+}
+.text-center {
+  text-align: center;
+}
+
+.overflow-auto {
+  overflow: auto;
+}
+
+.white {
+  color: #fff;
+}
+
+.primary {
+  color: var(--primary);
+}
+
+.secondary {
+  color: var(--secondary);
+}
+
+.title {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: 1.25px;
+  text-transform: uppercase;
+  color: #62656C;
+  margin-bottom: 25px;
+
+}
+
+
+.material-symbols-outlined {
+  font-variation-settings:
+    'FILL' 1,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 48
+}
+
+.flex {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+
+  >* {
+    flex: 1;
+  }
+}
+
+.inline-flex{
+  display: inline-flex;
+  gap: 10px;
+  &.mobile {
+    @media screen and (max-width: 768px) {
+      display: block;
+    }
+  }
+}
+
+.row {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 8px;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+
+  &.mobile {
+    @media screen and (max-width: 768px) {
+      grid-auto-flow: unset;
+      grid-template-columns: 1fr !important;
+    }
+  }
+}
+
+.grid-1-auto {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px;
+
+  &.mobile {
+    @media screen and (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+@for $i from 10 through 32 {
+  .f-#{$i} {
+    font-size: #{$i}px;
+    line-height: #{calc($i + 4)}px;
+  }
+}
+
+@for $i from 0 through 40 {
+  .padding-#{calc($i * 2)} {
+    padding: 0 #{calc($i * 2)}px;
+  }
+
+  .pt-#{calc($i * 2)} {
+    padding-top: #{calc($i * 2)}px;
+  }
+
+  .pb-#{calc($i * 2)} {
+    padding-bottom: #{calc($i * 2)}px;
+  }
+
+  .pl-#{calc($i * 2)} {
+    padding-left: #{calc($i * 2)}px;
+  }
+
+  .pr-#{calc($i * 2)} {
+    padding-right: #{calc($i * 2)}px;
+  }
+
+
+  .m-#{calc($i * 2)} {
+    margin: #{calc($i * 2)}px;
+  }
+
+  .mt-#{calc($i * 2)} {
+    margin-top: #{calc($i * 2)}px;
+  }
+
+  .mb-#{calc($i * 2)} {
+    margin-bottom: #{calc($i * 2)}px;
+  }
+
+  .ml-#{calc($i * 2)} {
+    margin-left: #{calc($i * 2)}px;
+  }
+}
+
+@for $i from 4 through 64 {
+
+  .gap-#{$i} {
+    gap: #{$i}px;
+  }
+
+  div.spacer-#{$i} {
+    height: #{$i}px;
+  }
+
+  span.spacer-#{$i} {
+    width: #{$i}px;
+    display: inline-block;
+  }
+}
+
+a {
+  color: var(--secondary);
+}
+
+.mat-mdc-unelevated-button.mat-mdc-button-base {
+  height: 40px;
+}
+
+@for $i from 1 through 4 {
+
+  .flex-#{$i} {
+    flex: #{$i};
+  }
+
+  @for $j from 1 through 4 {
+    .grid-#{$i}-#{$j} {
+      display: grid;
+      grid-template-columns: #{$i}fr #{$j}fr;
+      margin-bottom: 8px;
+
+      @media screen and (max-width: 768px) {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @for $k from 1 through 4 {
+      .grid-#{$i}-#{$j}-#{$k} {
+        display: grid;
+        grid-template-columns: #{$i}fr #{$j}fr #{$k}fr;
+        margin-bottom: 8px;
+
+        @media screen and (max-width: 768px) {
+          grid-template-columns: 1fr;
+        }
+      }
+    }
+  }
+}
+
+.grid-auto-1 {
+  display: grid;
+  grid-template-columns: auto 1fr;
+
+  &.mobile {
+    @media screen and (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+.green-button {
+  background: #42B20D !important;
+  color: #fff !important
+}
+.yellow-button {
+  background: rgba(237, 137, 20, 0.86) !important;
+  color: #fff !important
+}
+
+.color-green {
+  color: #42B20D;
+}
+
+.color-red {
+  color: #f00;
+}
+
+.aviso {
+  text-align: center;
+  font-size: 24px;
+  letter-spacing: 0.5px;
+  padding: 24px;
+}
+
+
+.dialog {
+  padding: 16px 24px;
+
+
+  @media screen and (max-width: 768px) {
+    width: auto !important;
+  }
+
+  .title {
+    padding-bottom: 6px;
+    margin: 0px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.44);
+    align-items: center;
+  }
+
+  .body {
+    padding-top: 26px;
+  }
+}
+
+.dialog-panel {
+  overflow: auto;
+
+  @media screen and (max-width: 768px) {
+
+    max-width: 100% !important;
+    width: 95% !important;
+  }
+}

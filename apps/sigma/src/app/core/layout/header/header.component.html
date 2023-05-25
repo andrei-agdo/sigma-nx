@@ -1,0 +1,36 @@
+<mat-toolbar class='mat-elevation-z6'>
+  <mat-toolbar-row [class.mobile]='isMobile'>
+    <div [class.disabled]='!isMobile'>
+      <img src="assets/images/cebrace.svg" width="46px">
+    </div>
+    <img (click)='menuStateChange.emit()' src="assets/images/menu-{{!isMobile && menuState?'aberto' : 'fechado'}}.svg" class='menu'>
+    <div class="title-header">
+      <img src="assets/images/logo-siscom.svg">
+    </div>
+    <div class='icons' *ngIf="!isMobile">
+      <button class="perfil-circle" matTooltip="Opções">
+        <img src='assets/images/user.svg'>
+        Usuário da Silva
+      </button>
+      <div class="logout">
+        <img src='assets/images/logout.svg'>
+      </div>
+
+    </div>
+
+    <div class='icons' *ngIf="isMobile">
+      <button class="perfil-circle" [matMenuTriggerFor]="menuMobile" matTooltip="Opções">
+        <img src='assets/images/user.svg'>
+      </button>
+      <mat-menu #menuMobile="matMenu">
+        <button mat-menu-item>
+          <span>Usuário da Silva</span>
+        </button>
+        <button mat-menu-item >
+          <mat-icon>exit_to_app</mat-icon>
+          <span>Logout</span>
+        </button>
+      </mat-menu>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>

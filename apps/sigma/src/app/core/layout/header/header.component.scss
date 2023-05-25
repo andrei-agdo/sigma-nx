@@ -1,0 +1,61 @@
+:host {
+  width: 100%;
+}
+
+mat-toolbar {
+  padding: 0px;
+  background: none;
+}
+
+mat-toolbar-row {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 16px;
+
+  &.mobile {
+    grid-template-columns: auto auto 1fr auto;
+  }
+
+}
+
+.disabled {
+  display: none;
+}
+
+.menu {
+  cursor: pointer;
+}
+
+.title-header {
+  font-size: 1em;
+  display: flex;
+  justify-content: center;
+}
+
+.mat-menu-item .mat-icon {
+  color:#f00 !important;
+}
+
+.icons {
+  grid-template-columns: 1fr auto;
+  display: grid;
+  place-content: center;
+
+  .logout {
+    display: grid;
+    place-content: center;
+    border-left: 1px solid #62656C;
+    padding-left: 10px;
+  }
+
+}
+
+.perfil-circle {
+  border-radius: 48px;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  background: none;
+}

@@ -1,0 +1,26 @@
+.menu {
+  user-select: none;
+  overflow: hidden;
+  width: 100%;
+}
+
+.logo {
+  overflow: hidden;
+  margin: 20px auto;
+  width: 177px;
+  transition: all ease-in-out .2s;
+
+  &:not(.opened) {
+    width: 70px;
+  }
+}
+
+sigma-nx--menu-item {
+  margin-left: 15px;
+  border-top: 2px solid rgba(44, 97, 174, 0.88);
+  margin-right: 15px;
+
+  &:last-of-type {
+    border-bottom: 2px solid rgba(44, 97, 174, 0.88);
+  }
+}

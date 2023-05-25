@@ -1,0 +1,74 @@
+
+::ng-deep .container-page .ng-animating {
+  background: #fff;
+
+  &:nth-child(2) {
+    display: block;
+  }
+
+  &:nth-child(3) {
+    visibility: hidden;
+  }
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 104px 1fr;
+  transition: all 0.4s ease;
+
+  &.opened{
+    grid-template-columns: 340px 1fr;
+  }
+}
+
+mat-drawer-content {
+  transition: all 0.4s ease;
+  background-color: #f0f;
+  display: grid;
+  grid-template-rows: 60px 1fr;
+}
+
+mat-drawer,
+.side-menu {
+  background: #1F467F;
+}
+
+.page-container {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  height: 100vh;
+}
+
+
+.page {
+  height: 100vh;
+  display: grid;
+}
+
+.close {
+  color: #fff;
+  float: right;
+  margin: 10px;
+}
+
+.container-page {
+  background: #fff;
+  overflow: auto;
+  margin: 14px 10px;
+  padding: 44px 64px;
+  position: relative;
+
+  &.mobile {
+    margin: 14px 0px;
+    padding: 24px;
+  }
+}
+
+
+.hide {
+  transition: all ease .4s;
+  position: absolute;
+  width: calc(100% - 13%);
+  opacity: 0;
+  transform: translateY(100px);
+}

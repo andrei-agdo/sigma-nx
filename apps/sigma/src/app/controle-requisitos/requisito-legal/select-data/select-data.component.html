@@ -1,0 +1,23 @@
+<div class="dialog">
+  <div class="title grid-1-auto">
+    <div>Busca</div>
+    <button mat-button [mat-dialog-close]=""><mat-icon>close</mat-icon></button>
+  </div>
+  <div class="body">
+    <sigma-nx-form #form>
+      <div>
+        <sigma-nx-input label='Data' required [(ngModel)]="data" type='date'>
+          <span required>Insira uma data</span>
+        </sigma-nx-input>
+      </div>
+
+    </sigma-nx-form>
+  </div>
+
+
+  <div mat-dialog-actions align="end">
+    <button mat-raised-button class="green-button" (click)="selectData(form)">
+      Inserir
+    </button>
+  </div>
+</div>

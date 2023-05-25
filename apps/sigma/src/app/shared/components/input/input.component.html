@@ -1,0 +1,89 @@
+<div [class.no-label]="!label" [class]="class" [class.date]="type=='date'" [class.readonly]="readonly">
+  <mat-form-field [appearance]="appearance" [color]="color" [class.hint-error]="!showErrorHint" [class.input]="type!='textarea'" [class.hide-hint]='hideHint'>
+    <mat-label *ngIf="label">{{ label }}</mat-label>
+
+    <!-- Input padrão de texto,password, email etc -->
+    <input matInput [readonly]="readonly" (blur)="blurEvent()" [placeholder]="placeholder" [style.text-align]="align" *ngIf="
+        type == 'text' ||
+        type == 'email' ||
+        type == 'password' ||
+        type == 'color' ||
+        type == 'number' ||
+        type == 'time'
+      " [type]="type" [autocomplete]="'new-password'" [formControl]="formControl" [mask]="mask" [thousandSeparator]="thousandSeparator" [required]="required" [maxlength]="maxLength" [name]="label" (input)='errorChange.emit(false)' />
+
+    <!-- textarea padrão -->
+    <textarea matInput [readonly]="readonly" autocomplete="off" (blur)="blurEvent()" [placeholder]="placeholder" [style.text-align]="align" *ngIf="type == 'textarea'" [formControl]="formControl" [required]="required" [maxlength]="maxLength" [name]="label"></textarea>
+
+    <!-- Autocomplete -->
+    <input type="text" [readonly]="readonly" *ngIf="type == 'autocomplete'" matInput [formControl]="formControl" [matAutocomplete]="auto" />
+
+    <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayWith" (optionSelected)="selectOption($event)">
+      <mat-option *ngFor="let option of options" [value]="option">
+        <ng-template #defaultTemplate let-option>{{
+          optionLabel?option[optionLabel]:option
+          }}</ng-template>
+        <ng-container [ngTemplateOutlet]="itemTemplate || defaultTemplate" [ngTemplateOutletContext]="{ $implicit: option }">
+        </ng-container>
+      </mat-option>
+      <mat-option disabled *ngIf="options?.length==0 && noItens">
+        <ng-container [ngTemplateOutlet]="noItens">
+        </ng-container>
+      </mat-option>
+    </mat-autocomplete>
+
+    <!-- Combo -->
+    <mat-select *ngIf="type == 'combo'" [formControl]="formControl" [compareWith]="compareWith" [required]="required" [multiple]="multiple" [placeholder]="placeholder" [panelClass]="readonly ? 'hidden-panel' : ''">
+      <mat-option *ngFor="let option of options" #optionSelected [value]="optionValue?option[optionValue]:option" [disabled]="disabledOptions && !optionSelected.selected" (click)='selectOptionCombo(option)'>
+        <ng-template #defaultTemplate let-option>{{
+          optionLabel?option[optionLabel]:option
+          }}</ng-template>
+        <ng-container [ngTemplateOutlet]="itemTemplate || defaultTemplate" [ngTemplateOutletContext]="{ $implicit: option }">
+        </ng-container>
+      </mat-option>
+    </mat-select>
+
+    <!-- Data -->
+    <!-- deixar com os ifs individuais pois o CSS dá uma alteração caso dentro de ng-container -->
+    <input *ngIf="type == 'date'" matInput (click)="picker.open()" (focus)="picker.open()" [matDatepicker]="picker" [formControl]="formControl" [required]="required" [readonly]="readonly" />
+    <mat-datepicker-toggle *ngIf="type == 'date'" matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+
+
+    <!-- Prefixo e Sufixo -->
+    <span matSuffix *ngIf="type != 'date'">
+      <ng-content select="[suffix]"></ng-content>
+    </span>
+
+
+    <span matPrefix *ngIf="type != 'date'">
+      <ng-content select="[prefix]"></ng-content>
+    </span>
+
+    <!-- Erro por validadores -->
+    <mat-error *ngIf="checkError('required')">
+      <ng-content select="[required]"></ng-content>
+    </mat-error>
+
+    <mat-error *ngIf="checkError('fullNameValidator')">
+      <ng-content select="[validateName]"></ng-content>
+    </mat-error>
+
+    <mat-error *ngIf="checkError('minlength')">
+      <ng-content select="[minLength]"></ng-content>
+    </mat-error>
+
+    <mat-error *ngIf="checkError('maxlength')">
+      <ng-content select="[maxLength]"></ng-content>
+    </mat-error>
+
+    <mat-error *ngIf="checkError('email')">
+      <ng-content select="[email]"></ng-content>
+    </mat-error>
+
+    <mat-error *ngIf="error === true">
+      <ng-content select="[error]"></ng-content>
+    </mat-error>
+
+  </mat-form-field>
+</div>

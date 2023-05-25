@@ -1,0 +1,39 @@
+<div class="dialog" *ngIf="departamento">
+  <div class="title grid-1-auto">
+    <div>{{!departamento.id?'Cadastrar' : 'Editar'}}</div>
+    <button mat-button [mat-dialog-close]="false"><mat-icon>close</mat-icon></button>
+  </div>
+  <div class="body">
+    <sigma-nx-form #form>
+      <div class="row mobile">
+
+        <sigma-nx-input label='Código' required [(ngModel)]="departamento.codigo">
+          <span required>Insira um código</span>
+        </sigma-nx-input>
+
+        <sigma-nx-input label='Nome' required [(ngModel)]="departamento.nome">
+          <span required>Insira um nome</span>
+        </sigma-nx-input>
+
+
+
+      </div>
+
+      <div class="row mobile">
+        <div class='mt-10 ml-20'>
+          Status <mat-slide-toggle [(ngModel)]="departamento.ativo"></mat-slide-toggle>
+        </div>
+      </div>
+
+
+    </sigma-nx-form>
+  </div>
+
+
+  <div mat-dialog-actions align="end">
+    <button mat-raised-button color="warn" [mat-dialog-close]="false">Cancelar</button>
+    <button mat-raised-button class="green-button" (click)="salvarDepartamento(form)">
+      Salvar
+    </button>
+  </div>
+</div>
