@@ -1,5 +1,6 @@
 import { NavigationEnd, NavigationStart, Router } from '@angular/router';
 import { Component } from '@angular/core';
+import { NgIf } from '@angular/common';
 
 let mostrarLoad: boolean;
 let escondendoLoad = false;
@@ -29,6 +30,8 @@ export const load = {
 @Component({
   selector: 'sigma-nx-load',
   templateUrl: './load.component.html',
+  standalone: true,
+  imports: [NgIf],
   styleUrls: ['./load.component.scss', './load-animation.component.scss']
 })
 export class LoadComponent {

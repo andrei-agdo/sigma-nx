@@ -165,7 +165,7 @@ export class HttpMock {
     data: SendType,
     returnText?: boolean
   ): Observable<ReturnType> {
-    let _responseType = returnText ? ('text' as 'json') : 'json';
+    const _responseType = returnText ? ('text' as 'json') : 'json';
 
     const _safeResourceUrl: SafeUrl = this.sanitizer.bypassSecurityTrustUrl(
       environment.apiMock + url

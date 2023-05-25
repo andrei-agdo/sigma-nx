@@ -21,7 +21,7 @@ import { MenuComponent } from './menu/menu.component';
 import { MatIconModule } from '@angular/material/icon';
 import { NgFor, NgIf } from '@angular/common';
 @Component({
-  selector: 'sigma-nx--layout',
+  selector: 'sigma-nx-layout',
   templateUrl: './layout.component.html',
   styleUrls: ['./layout.component.scss'],
   standalone: true,

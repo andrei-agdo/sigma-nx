@@ -1,10 +1,10 @@
 <div class='page'>
   <div *ngIf="!isMobile" class="container" [class.opened]='opened'>
     <div (mouseover)='opened = true' (mouseleave)="opened = fixOpen || false; menu.closeMenus()" class="side-menu">
-      <sigma-nx--menu #menu [opened]='opened'></sigma-nx--menu>
+      <sigma-nx-menu #menu [opened]='opened'></sigma-nx-menu>
     </div>
     <div class="overflow-auto">
-      <sigma-nx--header [menuState]='opened' (menuStateChange)="fixOpen = !fixOpen; opened=!opened"></sigma-nx--header>
+      <sigma-nx-header [menuState]='opened' (menuStateChange)="fixOpen = !fixOpen; opened=!opened"></sigma-nx-header>
       <div class="container-page mat-elevation-z6" [@routerTransition]="prepareRoute(outlet)">
         <div [class.hide]='loading'>
           <router-outlet #outlet="outlet"></router-outlet>
@@ -21,10 +21,10 @@
         </mat-icon>
       </div>
       <br>
-      <sigma-nx--menu [opened]='true' #menu (itemClick)="sidenav.toggle();menu.closeMenus()"></sigma-nx--menu>
+      <sigma-nx-menu [opened]='true' #menu (itemClick)="sidenav.toggle();menu.closeMenus()"></sigma-nx-menu>
     </mat-drawer>
 
-    <sigma-nx--header [menuState]='sidenav.opened' (menuStateChange)="sidenav.toggle()"></sigma-nx--header>
+    <sigma-nx-header [menuState]='sidenav.opened' (menuStateChange)="sidenav.toggle()"></sigma-nx-header>
 
     <div class="container-page mat-elevation-z6" [class.mobile]="isMobile" [@routerTransition]="prepareRoute(outlet)">
       <div [class.hide]='loading'>

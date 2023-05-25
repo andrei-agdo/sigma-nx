@@ -1,5 +1,5 @@
 <div class="menu-item" *ngIf="modulo" [class.opened]='!opened'>
-  <div class="grid-item" [style.padding-left]="((level*20)+25)+'px' " [routerLink]="modulo.modulosParent===0?modulo?.rota:undefined" routerLinkActive="active" [class.active]='isActiveRoute' (click)="menuClick(modulo)" [routerLinkActiveOptions]="{exact: false}" [class.little]='level>1'>
+  <div class="grid-item" [style.padding-left]="((level*20)+25)+'px' " [routerLink]="modulo.modulosParent.length===0?modulo?.rota:undefined" routerLinkActive="active" [class.active]='isActiveRoute' (click)="menuClick(modulo)" [routerLinkActiveOptions]="{exact: false}" [class.little]='level>1'>
     <mat-icon [class.expandable]='modulo.icone==="arrow_back_ios"' [class.rotated]='modulo.icone==="arrow_back_ios" && displayedMenu'>
       {{ modulo.icone}}
     </mat-icon>
@@ -10,7 +10,7 @@
 
   <ng-container *ngIf="displayedMenu">
 
-    <sigma-nx--menu-item [level]="level+1" @fadeAnimation *ngFor='let moduloChild of modulo.modulosParent' [modulo]="moduloChild" (menuItemClick)='menuItemClicked(moduloChild?.rota)'></sigma-nx--menu-item>
+    <sigma-nx-menu-item [level]="level+1" @fadeAnimation *ngFor='let moduloChild of modulo.modulosParent' [modulo]="moduloChild" (menuItemClick)='menuItemClicked(moduloChild?.rota)'></sigma-nx-menu-item>
 
   </ng-container>
 </div>

@@ -3,6 +3,6 @@
 </div>
 
 <div class="menu" [class.opened]="opened">
-  <sigma-nx--menu-item *ngFor='let modulo of modulos' [modulo]="modulo" (menuItemClick)="itemClick.emit()" [opened]="opened">
-  </sigma-nx--menu-item>
+  <sigma-nx-menu-item *ngFor='let modulo of modulos' [modulo]="modulo" (menuItemClick)="itemClick.emit()" [opened]="opened">
+  </sigma-nx-menu-item>
 </div>

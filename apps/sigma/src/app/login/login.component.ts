@@ -2,7 +2,7 @@ import { AuthService } from '@core/services/auth.service';
 import { AuthLogin } from '@shared/models/auth.interface';
 import { LoginService } from './login.service';
 import { AlertService } from '@shared/services/alert.service';
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { load } from '@core/utils/load/load.component';
 import { MatButtonModule } from '@angular/material/button';

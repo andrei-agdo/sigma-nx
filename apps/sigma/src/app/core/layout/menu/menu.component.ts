@@ -9,7 +9,7 @@ import { MenuItemComponent } from './menu-item/menu-item.component';
 import { NgFor } from '@angular/common';
 
 @Component({
-  selector: 'sigma-nx--menu',
+  selector: 'sigma-nx-menu',
   standalone: true,
   imports: [MenuItemComponent,NgFor],
   templateUrl: './menu.component.html',

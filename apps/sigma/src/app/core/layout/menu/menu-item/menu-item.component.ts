@@ -5,7 +5,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { Router, RouterModule } from '@angular/router';
 
 @Component({
-  selector: 'sigma-nx--menu-item',
+  selector: 'sigma-nx-menu-item',
   templateUrl: './menu-item.component.html',
   styleUrls: ['./menu-item.component.scss'],
   standalone: true,

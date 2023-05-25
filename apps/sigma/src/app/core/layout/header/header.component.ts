@@ -7,7 +7,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { NgIf } from '@angular/common';
 @Component({
-  selector: 'sigma-nx--header',
+  selector: 'sigma-nx-header',
   standalone: true,
   imports: [MatToolbarModule, MatMenuModule, MatIconModule, NgIf],
   templateUrl: './header.component.html',
