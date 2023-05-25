@@ -1,7 +1,7 @@
 import { Observable, map } from 'rxjs';
 import { Filter } from '@shared/models/filter';
 import { Injectable, inject, Inject } from '@angular/core';
-import { HttpMock } from '@shared/services/http.mock.service';
+import { HttpMock } from '@sigma-nx/services/http';
 
 interface AtualizacaoAtivo {
   readonly id: string;

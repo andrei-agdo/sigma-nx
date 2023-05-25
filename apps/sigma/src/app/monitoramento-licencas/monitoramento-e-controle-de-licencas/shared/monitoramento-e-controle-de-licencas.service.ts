@@ -1,7 +1,7 @@
 import { MonitoramentoEControleDeLicenca } from './monitoramento-e-controle-de-licencas';
-import { Injectable, inject } from '@angular/core';
+import { Injectable } from '@angular/core';
 
-import { of, Observable, map, Subject, BehaviorSubject } from 'rxjs';
+import { of, map, BehaviorSubject } from 'rxjs';
 import { MonitoramentoEControleDeLicencaSimplificado } from './monitoramento-e-controle-de-licencas-simplificado';
 import { CrudMockService } from '@core/services/crud.mock.service';
 

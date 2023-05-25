@@ -1,3 +1,4 @@
+import { environment } from '@environments/environment';
 import { RequisitoLegal } from './requisito-legal';
 import { Filter } from '@shared/models/filter';
 import { Injectable } from '@angular/core';
@@ -5,9 +6,6 @@ import { CrudService } from '@core/services/crud.service';
 import { RequisitoLegalSimplificado } from './requisito-legal-simplificado';
 import { RequisitoLegalFilter } from './requisito-legal-filter';
 import { Atendimento } from './atendimento';
-import { environment } from '@environments/environment';
-
-
 
 @Injectable({
   providedIn: 'root',

@@ -1,6 +1,6 @@
 // serviço de http geral
 
-import { environment } from '@environments/environment';
+import { environment } from './environment';
 
 import { Injectable, SecurityContext } from '@angular/core';
 import {
@@ -12,8 +12,7 @@ import {
 } from '@angular/common/http';
 import { Observable, of, timer } from 'rxjs';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
-import { retry, map } from 'rxjs/operators';
-import { selfUnsubscribe } from '@core/pipes/selfUnsubscribe';
+import { retry, map, take } from 'rxjs/operators';
 
 interface OptionsHttp {
   headers?:
@@ -29,7 +28,6 @@ interface OptionsHttp {
 
 @Injectable()
 export class Http {
-
   private cacheEntityGet: {
     [url: string]: unknown;
   } = {};
@@ -63,7 +61,7 @@ export class Http {
       )
       .pipe(
         map((res: HttpResponse<T>) => this.mapResponse(res, url, options)),
-        selfUnsubscribe(),
+        take(1),
         retry({
           count: 3,
           delay: (error: HttpErrorResponse) =>
@@ -139,7 +137,7 @@ export class Http {
           delay: (error: HttpErrorResponse) =>
             error.status >= 500 ? timer(1000) : of(),
         }),
-        selfUnsubscribe()
+        take(1)
       );
   }
 
@@ -186,7 +184,7 @@ export class Http {
         observe: 'body',
         responseType: 'json',
       }) as Observable<ReturnType>
-    ).pipe(selfUnsubscribe());
+    ).pipe(take(1));
   }
 
   /**
@@ -216,7 +214,7 @@ export class Http {
       .patch<ReturnType>(_safeUrl, data, {
         responseType: _responseType,
       })
-      .pipe(selfUnsubscribe());
+      .pipe(take(1));
   }
   /**
    * Função de requisição HTTP Put
@@ -256,7 +254,7 @@ export class Http {
         observe: 'body',
         responseType: 'json',
       })
-      .pipe(selfUnsubscribe()) as Observable<ReturnType>;
+      .pipe(take(1)) as Observable<ReturnType>;
   }
   /**
    * Função de requisição HTTP Delete
@@ -272,6 +270,6 @@ export class Http {
       4,
       _safeResourceUrl
     ) as string;
-    return this.http.delete<boolean>(_safeUrl).pipe(selfUnsubscribe());
+    return this.http.delete<boolean>(_safeUrl).pipe(take(1));
   }
 }
