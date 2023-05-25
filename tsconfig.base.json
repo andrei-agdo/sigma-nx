@@ -17,7 +17,7 @@
     "paths": {
       "@core/*": ["apps/sigma/src/app/core/*"],
       "@directives/*": ["apps/sigma/src/app/shared/directives/*"],
-      "@environments/*": ["apps/sigma/src/environments/*"],
+      "@environments/*": ["environments/*"],
       "@helpers/*": ["apps/sigma/src/app/shared/helpers/*"],
       "@layout/*": ["apps/sigma/src/app/core/layout/*"],
       "@pipes/*": ["apps/sigma/src/app/shared/pipes/*"],
@@ -26,6 +26,8 @@
         "libs/administrativo/usuarios/src/index.ts"
       ],
       "@sigma-nx/material": ["libs/material/src/index.ts"],
+      "@sigma-nx/services/http": ["libs/services/http/src/index.ts"],
+      "@sigma-nx/shared/http": ["libs/shared/http/src/index.ts"],
       "@sigma-nx/ui": ["libs/ui/src/index.ts"],
       "@types/*": ["apps/sigma/src/app/shared/types/*"]
     }
