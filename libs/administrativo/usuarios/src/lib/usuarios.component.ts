@@ -4,7 +4,7 @@ import { Filter } from '@shared/models/filter';
 import { Usuario } from './shared/usuario';
 import { MatDialog } from '@angular/material/dialog';
 import { UsuariosService } from './shared/usuarios.service';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { load } from '@core/utils/load/load.component';
 import { UsuarioSimplificado } from './shared/usuario-simplificado';
 
@@ -13,7 +13,7 @@ import { UsuarioSimplificado } from './shared/usuario-simplificado';
   templateUrl: './usuarios.component.html',
   styleUrls: ['./usuarios.component.scss'],
 })
-export class UsuariosComponent {
+export class UsuariosComponent implements OnInit {
   public filter: Filter & Partial<Usuario> = {
     eDecrescente: false,
     itensPorPagina: 10,
@@ -28,13 +28,13 @@ export class UsuariosComponent {
 
   public perfis$ = this.perfilService.get();
 
-  public usuarios: UsuarioSimplificado[];
+  public usuarios: UsuarioSimplificado[] = [];
 
   constructor(
     private usuariosService: UsuariosService,
     private matDialog: MatDialog,
     private perfilService: PerfilService
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.getUsuarios();
