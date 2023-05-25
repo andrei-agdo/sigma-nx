@@ -1,10 +1,10 @@
+import { UiModule } from './../../../../libs/ui/src/lib/ui.module';
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { NxWelcomeComponent } from './nx-welcome.component';
 
 @Component({
   standalone: true,
-  imports: [NxWelcomeComponent, RouterModule],
+  imports: [RouterModule, UiModule],
   selector: 'sigma-nx-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
