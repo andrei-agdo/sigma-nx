@@ -1,3 +1,4 @@
+import { MaterialModule } from '@sigma-nx/material';
 import { CustomPaginator } from '@core/services/customPaginatorConfiguration';
 import { MatPaginatorIntl } from '@angular/material/paginator';
 import { ModalService } from './components/modal/modal.service';
@@ -5,7 +6,6 @@ import { AlertService, AlertComponent } from './services/alert.service';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MaterialModule } from '@shared/modules/material.module';
 import { NgxMaskModule } from 'ngx-mask';
 import { FormComponent } from './components/form/form.component';
 import { InputComponent } from './components/input/input.component';

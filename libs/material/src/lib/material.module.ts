@@ -19,11 +19,9 @@ import {
 } from '@angular/material/dialog';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
-import { DisableToggleDirective } from './disable-toggle.directive';
 import {MatMenuModule} from '@angular/material/menu';
 
 @NgModule({
-  declarations: [DisableToggleDirective],
   exports: [
     MatMenuModule,
     MatSlideToggleModule,

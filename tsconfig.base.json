@@ -15,31 +15,16 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@core/*": ["apps/sigma/src/app/core/*"],
+      "@directives/*": ["apps/sigma/src/app/shared/directives/*"],
+      "@environments/*": ["apps/sigma/src/environments/*"],
+      "@helpers/*": ["apps/sigma/src/app/shared/helpers/*"],
+      "@layout/*": ["apps/sigma/src/app/core/layout/*"],
+      "@pipes/*": ["apps/sigma/src/app/shared/pipes/*"],
+      "@shared/*": ["apps/sigma/src/app/shared/*"],
+      "@sigma-nx/material": ["libs/material/src/index.ts"],
       "@sigma-nx/ui": ["libs/ui/src/index.ts"],
-      "@core/*": [
-        "apps/sigma/src/app/core/*"
-      ],
-      "@shared/*": [
-        "apps/sigma/src/app/shared/*"
-      ],
-      "@layout/*": [
-        "apps/sigma/src/app/core/layout/*"
-      ],
-      "@pipes/*": [
-        "apps/sigma/src/app/shared/pipes/*"
-      ],
-      "@directives/*": [
-        "apps/sigma/src/app/shared/directives/*"
-      ],
-      "@helpers/*": [
-        "apps/sigma/src/app/shared/helpers/*"
-      ],
-      "@types/*": [
-        "apps/sigma/src/app/shared/types/*"
-      ],
-      "@environments/*": [
-        "apps/sigma/src/environments/*"
-      ]
+      "@types/*": ["apps/sigma/src/app/shared/types/*"]
     }
   },
   "exclude": ["node_modules", "tmp"]
