@@ -1,4 +1,4 @@
-import { Observable, map } from 'rxjs';
+import { Observable } from 'rxjs';
 
 import { Item } from '@shared/models/item.model';
 import { Usuario } from './usuario';

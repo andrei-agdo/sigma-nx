@@ -1,4 +1,4 @@
-import { Http } from '@shared/services/http.service';
+import { Http } from '@sigma-nx/services/http';
 import { Injectable } from '@angular/core';
 import { Observable, map, of } from 'rxjs';
 import { Address, Endereco, Estado } from '@shared/models/endereco';
@@ -9,14 +9,14 @@ import { Address, Endereco, Estado } from '@shared/models/endereco';
 export class EnderecoService {
   private estados: Estado[] = [];
 
-  constructor(private http: Http) {}
+  constructor(private http: Http) { }
 
   getEstados() {
     return this.estados.length > 0
       ? of(this.estados)
       : this.http
-          .get<Estado[]>('/estados')
-          .pipe(map((estados) => (this.estados = estados)));
+        .get<Estado[]>('/estados')
+        .pipe(map((estados) => (this.estados = estados)));
   }
 
   getAddressByCodigoPostal(codigoPostal: string) {

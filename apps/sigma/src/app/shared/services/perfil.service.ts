@@ -1,6 +1,6 @@
 import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
-import { Http } from './http.service';
+import { Http } from '@sigma-nx/services/http';
 import { Perfil } from '../models/perfil';
 
 @Injectable({

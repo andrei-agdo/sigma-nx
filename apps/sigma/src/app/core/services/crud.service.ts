@@ -1,7 +1,7 @@
 import { Observable } from 'rxjs';
 import { Filter } from '@shared/models/filter';
 import { Injectable, inject, Inject } from '@angular/core';
-import { Http } from '@shared/services/http.service';
+import { Http } from '@sigma-nx/services/http';
 import { Base } from '@shared/models/base';
 
 interface AtualizacaoAtivo {
@@ -21,7 +21,7 @@ export class CrudService<T extends Base, TSimplificado extends Base = T, TFilter
   public mapGet = (filter?: Filter & Partial<TFilter>): {
     [k: string]: string | number | boolean;
   } => {
-    let _filter = { ...filter } as Filter & T;
+    const _filter = { ...filter } as Filter & T;
 
     if (!_filter.itensPorPagina) _filter.itensPorPagina = 99;
     if (!_filter.pagina) _filter.pagina = 0;
