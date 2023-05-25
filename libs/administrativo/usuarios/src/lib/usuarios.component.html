@@ -1,0 +1,52 @@
+<div class='title'>Usuários</div>
+
+<div class='grid-1-auto gap-10 mobile'>
+  <sigma-nx-filter-button #filterContent>
+    <ng-container *ngIf="filterContent.opened">
+      <sigma-nx-input [(ngModel)]="filter.nome" label='Nome' type="text">
+      </sigma-nx-input>
+
+      <sigma-nx-input [(ngModel)]="filter.email" label='E-mail' type="text">
+      </sigma-nx-input>
+
+      <sigma-nx-input [(ngModel)]="filter.perfilId" label='Perfil' type="combo" [options]="perfis$ | async" optionValue="id" optionLabel="descricao">
+      </sigma-nx-input>
+
+
+      <mat-slide-toggle class="toggle-filter mb-10" [(ngModel)]="filter.ativo" labelPosition='before'>Status</mat-slide-toggle>
+
+      <sigma-nx-search-button (click)='getUsuarios(true)'></sigma-nx-search-button>
+    </ng-container>
+  </sigma-nx-filter-button>
+  <div>
+    <button mat-flat-button color='accent' (click)="openUsuario()">CADASTRAR</button>
+  </div>
+</div>
+
+<div class='spacer-20'></div>
+
+
+<sigma-nx-table *ngIf="usuarios" #table [data]='usuarios' [length]="usuarios.length" (pageChange)='changePage($event)' [(page)]="page">
+
+  <div t-head sticky sort (click)='sortBy("nome")'>Nome</div>
+  <div *tableItem='let item'>{{item.nome}}</div>
+
+  <div t-head sort (click)='sortBy("email")'>E-mail</div>
+  <div *tableItem='let item'>{{item.email}}</div>
+
+  <div t-head sort (click)='sortBy("perfil")'>Perfil</div>
+  <div *tableItem='let item'>{{item.perfil}}</div>
+
+  <div t-head>Status</div>
+  <div *tableItem='let item'>
+    <mat-slide-toggle [checked]="item.ativo" (change)="changeStatus(item)"></mat-slide-toggle>
+  </div>
+
+  <div t-head stickyEnd>Ação</div>
+  <div *tableItem='let item' class="acoes">
+    <button mat-mini-fab (click)='openUsuario(item)'>
+      <mat-icon>edit</mat-icon>
+    </button>
+  </div>
+
+</sigma-nx-table>

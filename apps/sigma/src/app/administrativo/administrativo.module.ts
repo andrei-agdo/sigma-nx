@@ -6,7 +6,7 @@ const routes: Routes = [
     path: 'usuarios',
     title: 'Usuários',
     loadChildren: () =>
-      import('./usuarios/usuarios.module').then((m) => m.UsuariosModule),
+      import('@sigma-nx/administrativo/usuarios').then((m) => m.UsuariosModule),
   },
   {
     path: 'gestoes',

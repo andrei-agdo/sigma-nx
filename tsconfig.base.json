@@ -22,6 +22,9 @@
       "@layout/*": ["apps/sigma/src/app/core/layout/*"],
       "@pipes/*": ["apps/sigma/src/app/shared/pipes/*"],
       "@shared/*": ["apps/sigma/src/app/shared/*"],
+      "@sigma-nx/administrativo/usuarios": [
+        "libs/administrativo/usuarios/src/index.ts"
+      ],
       "@sigma-nx/material": ["libs/material/src/index.ts"],
       "@sigma-nx/ui": ["libs/ui/src/index.ts"],
       "@types/*": ["apps/sigma/src/app/shared/types/*"]
