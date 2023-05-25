@@ -1,5 +1,4 @@
-import { MatListModule } from '@angular/material/list';
-import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule, MatSidenavModule, MatIconModule } from '@sigma-nx/material';
 import {
   trigger,
   transition,
@@ -18,7 +17,6 @@ import {
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { HeaderComponent } from './header/header.component';
 import { MenuComponent } from './menu/menu.component';
-import { MatIconModule } from '@angular/material/icon';
 import { NgFor, NgIf } from '@angular/common';
 @Component({
   selector: 'sigma-nx-layout',
@@ -26,7 +24,7 @@ import { NgFor, NgIf } from '@angular/common';
   styleUrls: ['./layout.component.scss'],
   standalone: true,
   imports: [
-    NgIf,NgFor,
+    NgIf, NgFor,
     HeaderComponent,
     MenuComponent,
     RouterModule,

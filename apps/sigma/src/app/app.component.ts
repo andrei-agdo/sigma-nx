@@ -3,16 +3,14 @@ import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CoreModule } from '@core/core.module';
 import { LoadComponent } from '@core/utils/load/load.component';
-import { UiModule } from '@sigma-nx/ui';
 @Component({
   standalone: true,
   imports: [
-    RouterModule, UiModule,
+    RouterModule,
     CoreModule, LoadComponent],
   providers: [HttpClientModule],
   selector: 'sigma-nx-root',
-  template: `<sigma-nx-load></sigma-nx-load><router-outlet></router-outlet>`,
-  styleUrls: ['./app.component.scss'],
+  template: `<sigma-nx-load></sigma-nx-load><router-outlet></router-outlet>`
 })
 export class AppComponent {
 

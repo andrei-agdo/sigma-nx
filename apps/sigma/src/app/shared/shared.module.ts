@@ -16,7 +16,6 @@ import { FilterButtonComponent } from './components/filter-button/filter-button.
 import { SearchButtonComponent } from './components/search-button/search-button.component';
 import { ModalComponent } from './components/modal/modal.component';
 import { CurrencyList } from '@core/utils/currency.config';
-import { HttpClientModule } from '@angular/common/http';
 
 // Antes de colocar um item aqui faça a seguinte pergunta:
 
@@ -51,10 +50,10 @@ import { HttpClientModule } from '@angular/common/http';
     ModalComponent,
   ],
   exports: [
+    MaterialModule,
     CommonModule,
     InputComponent,
     FormComponent,
-    MaterialModule,
     NgxMaskModule,
     ButtonComponent,
     FormsModule,
@@ -63,11 +62,11 @@ import { HttpClientModule } from '@angular/common/http';
     SearchButtonComponent
   ],
   providers: [
-    HttpClientModule,
+
     AlertService,
     ModalService,
     ...CurrencyList,
     { provide: MatPaginatorIntl, useValue: CustomPaginator() },
   ],
 })
-export class SharedModule {}
+export class SharedModule { }
