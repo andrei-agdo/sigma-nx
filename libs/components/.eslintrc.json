@@ -9,7 +9,6 @@
           "error",
           {
             "type": "attribute",
-            "prefix": "sigmaNx",
             "style": "camelCase"
           }
         ],

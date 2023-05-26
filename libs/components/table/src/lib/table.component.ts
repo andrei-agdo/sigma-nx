@@ -60,7 +60,7 @@ export class TableComponent {
   ///////////////////////////////////////////////////
 
   //Quantidades de itens totais
-  @Input() length: number = 0;
+  @Input() length = 0;
 
   // opções de itens por pagina
   @Input() pageSizeOptions = [10, 25, 50];
@@ -68,7 +68,7 @@ export class TableComponent {
   // Exibir painel de detalhes ao clicar na linha
   @Input() expandItemOnClick: boolean | string = false;
 
-  @Input() hidePaginator: boolean = false;
+  @Input() hidePaginator = false;
 
   // variavel pra atribuir o objeto a ser expandido
 
@@ -111,14 +111,14 @@ export class TableComponent {
 
   protected displayedColumns: string[] = [];
 
-  private _data: unknown[];
+  private _data: unknown[] = [];
 
   @ViewChild(MatPaginator) private paginator: MatTableDataSourcePaginator;
-  @ViewChild(MatSort) private sort: MatSort;
+  @ViewChild(MatSort) private sort: MatSort = new MatSort();
 
-  protected dataSource: MatTableDataSource<unknown>;
+  protected dataSource: MatTableDataSource<unknown> = new MatTableDataSource();
 
-  protected headerProcessed: TableHeaderComponent[];
+  protected headerProcessed: TableHeaderComponent[] = [];
   protected bodysProcessed: TableItemDirective[] = [];
 
   constructor(private cd: ChangeDetectorRef) { }
