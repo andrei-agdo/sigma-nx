@@ -2,8 +2,6 @@ import { MatDialog } from '@angular/material/dialog';
 import { inject } from '@angular/core';
 import { Tipo } from '../../tipo/shared/tipo';
 import { Origem } from '../../origem/shared/origem';
-import { Aplicabilidade } from '../../aplicabilidade/shared/aplicabilidade';
-import { AplicabilidadeService } from './../../aplicabilidade/shared/aplicabilidade.service';
 
 import { OrigemService } from './../../origem/shared/origem.service';
 import { TipoService } from './../../tipo/shared/tipo.service';
@@ -20,6 +18,7 @@ import { MonitoramentoEControleDeLicencasService } from '../../../monitoramento-
 import { Gestao, GestoesService } from '@sigma-nx/administrativo/gestoes';
 import { Tema, TemasService } from '@sigma-nx/administrativo/temas';
 import { AmbitoService } from '@sigma-nx/controle-requisitos/ambito';
+import { AplicabilidadeService } from 'libs/controle-requisitos/aplicabilidade/src/lib/shared/aplicabilidade.service';
 export class RequisitoLegalFacade {
 
   readonly temas$: Observable<Tema[]> = inject(TemasService).get({ ativo: true }, true);
@@ -30,7 +29,7 @@ export class RequisitoLegalFacade {
 
   readonly gestoes$: Observable<Gestao[]> = inject(GestoesService).get({ ativo: true }, true);
 
-  readonly aplicabilidades$: Observable<Aplicabilidade[]> = inject(AplicabilidadeService).get({ ativo: true }, true);
+  readonly aplicabilidades$ = inject(AplicabilidadeService).get({ ativo: true }, true);
 
   readonly requisitoLegalService = inject(RequisitoLegalService);
 
