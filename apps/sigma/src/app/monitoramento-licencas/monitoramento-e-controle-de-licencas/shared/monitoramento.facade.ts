@@ -1,12 +1,12 @@
 import { TemasService } from '@sigma-nx/administrativo/temas';
 import { inject } from '@angular/core';
-import { OrgaoControleService } from '../../orgao-controle/shared/orgao-controle.service';
 import { MonitoramentoEControleDeLicencasService } from './monitoramento-e-controle-de-licencas.service';
-import { TipoDocumentoService } from '../../tipo-documento/shared/tipo-documento.service';
 import { GestoesService } from '@sigma-nx/administrativo/gestoes';
 import { ModalService } from '@sigma-nx/services/modal';
 import { UsuariosService } from '@sigma-nx/administrativo/usuarios';
 import { FornecedorService } from '@sigma-nx/monitoramento-licencas/fornecedor';
+import { OrgaoControleService } from '@sigma-nx/monitoramento-licencas/orgao-controle';
+import { TipoDocumentoService } from '@sigma-nx/monitoramento-licencas/tipo-documento';
 
 
 export class MonitoramentoFacade {
