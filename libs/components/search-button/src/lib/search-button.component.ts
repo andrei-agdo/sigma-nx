@@ -6,8 +6,7 @@ import { MatIconModule } from '@angular/material/icon';
   selector: 'sigma-nx-search-button',
   standalone: true,
   imports: [MatButtonModule, MatIconModule],
-  template: `<button mat-flat-button color="accent" class="button-search"><mat-icon>search</mat-icon></button>
-  `,
+  template: `<button mat-flat-button color="accent" class="button-search"><mat-icon>search</mat-icon></button>`,
   styles: [`.button-search {
     float: right;
     min-width: 44px;

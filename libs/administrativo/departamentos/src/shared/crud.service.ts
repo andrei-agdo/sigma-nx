@@ -1,7 +1,7 @@
 import { Observable } from 'rxjs';
 import { Filter } from "./filter";
 import { Injectable, inject, Inject } from '@angular/core';
-import { Http } from './http.service';
+import { Http } from '@sigma-nx/services/modal';
 import { Base } from "./base";
 
 interface AtualizacaoAtivo {
