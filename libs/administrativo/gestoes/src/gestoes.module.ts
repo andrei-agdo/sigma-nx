@@ -10,11 +10,10 @@ import { SearchButtonComponent } from '@sigma-nx/components/search-button';
 import { FormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
-import { ModalService } from '@sigma-nx/services/modal';
+
 
 @NgModule({
   declarations: [GestoesComponent],
-  providers: [ModalService],
   imports: [CommonModule, GestoesRoutingModule,
     TableModule,
     FilterButtonComponent,

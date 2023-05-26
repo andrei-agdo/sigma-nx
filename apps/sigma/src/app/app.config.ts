@@ -14,6 +14,7 @@ import { appRoutes } from './app.routes';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpModule } from '@sigma-nx/services/http';
 import { ModalService } from '@sigma-nx/services/modal';
+import { MatDialogModule } from '@angular/material/dialog';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -27,6 +28,6 @@ export const appConfig: ApplicationConfig = {
         urlUpdateStrategy: 'eager',
         onSameUrlNavigation: 'reload'
       })),
-    importProvidersFrom([BrowserAnimationsModule,HttpModule,ModalService])
+    importProvidersFrom([BrowserAnimationsModule,HttpModule,ModalService,MatDialogModule])
   ],
 };

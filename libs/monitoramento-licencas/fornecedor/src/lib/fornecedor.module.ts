@@ -5,7 +5,7 @@ import { SharedModule } from '@sigma-nx/shared';
 import { FornecedorComponent } from './fornecedor.component';
 import { RouterModule, Routes } from '@angular/router';
 import { NgxMaskModule } from 'ngx-mask';
-import { ModalService } from '@sigma-nx/services/modal';
+
 
 const routes: Routes = [
   { path: '', component: FornecedorComponent },
@@ -23,7 +23,6 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [FornecedorComponent],
-  providers: [ModalService],
   imports: [CommonModule, SharedModule, RouterModule.forChild(routes), NgxMaskModule.forRoot()],
 })
 export class FornecedorModule {}
