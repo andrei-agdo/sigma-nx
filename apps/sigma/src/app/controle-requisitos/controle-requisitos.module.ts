@@ -34,7 +34,7 @@ const routes: Routes = [
     path: 'ambito',
     title: 'Âmbito',
     loadChildren: () =>
-      import('./ambito/ambito.module').then((m) => m.AmbitoModule),
+      import('@sigma-nx/controle-requisitos/ambito').then((m) => m.AmbitoModule),
   },
 ];
 @NgModule({

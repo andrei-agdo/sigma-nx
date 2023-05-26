@@ -2,7 +2,7 @@ import { AmbitoService } from './shared/ambito.service';
 import { Ambito } from './shared/ambito';
 import { MatDialog } from '@angular/material/dialog';
 import { TablePagination } from '@sigma-nx/components/table';
-import { Filter } from '@shared/models/filter';
+import { Filter } from '@sigma-nx/shared';
 import { Component } from '@angular/core';
 @Component({
   selector: 'sigma-nx-ambito',
