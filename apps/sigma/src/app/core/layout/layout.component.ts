@@ -1,4 +1,3 @@
-import { MatListModule, MatSidenavModule, MatIconModule } from '@sigma-nx/material';
 import {
   trigger,
   transition,
@@ -18,6 +17,9 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { HeaderComponent } from './header/header.component';
 import { MenuComponent } from './menu/menu.component';
 import { NgFor, NgIf } from '@angular/common';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+import { MatIconModule } from '@angular/material/icon';
 @Component({
   selector: 'sigma-nx-layout',
   templateUrl: './layout.component.html',
