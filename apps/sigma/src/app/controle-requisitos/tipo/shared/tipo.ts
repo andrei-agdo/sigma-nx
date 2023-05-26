@@ -1,3 +1,3 @@
-import { Base } from '@shared/models/base';
+import { Base } from '@sigma-nx/shared';
 
 export interface Tipo extends Base {}

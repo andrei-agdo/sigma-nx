@@ -7,7 +7,7 @@ import { TableModule } from '@sigma-nx/components/table';
 import { MatDialog } from '@angular/material/dialog';
 import { Prazo } from '../../../shared/prazos';
 import { TableComponent } from '@sigma-nx/components/table';
-import { Base } from '@shared/models/base';
+import { Base } from '@sigma-nx/shared';
 
 @Component({
   selector: 'sigma-nx-tabela-prazo',

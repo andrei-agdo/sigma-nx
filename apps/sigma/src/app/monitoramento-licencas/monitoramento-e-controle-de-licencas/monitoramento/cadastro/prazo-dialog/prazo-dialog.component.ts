@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { SharedModule } from '@shared/shared.module';
 import { FormComponent } from '@sigma-nx/components/input';
-import { Base } from '@shared/models/base';
+import { Base } from '@sigma-nx/shared';
 import { Prazo } from '../../../shared/prazos';
 
 @Component({

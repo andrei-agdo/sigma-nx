@@ -1,4 +1,4 @@
-import { Base } from '@shared/models/base';
+import { Base } from '@sigma-nx/shared';
 export interface RequisitoLegal extends Base {
   tipoRequisitoLegalId?: string;
   origemId?: string;

@@ -1,18 +1,16 @@
 import { GestoesService } from './../shared/gestoes.service';
-import { MAT_DIALOG_DATA, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { Gestao } from '../shared/gestao';
 import { Component, Inject } from '@angular/core';
 import { FormComponent } from '@sigma-nx/components/input';
 import { ModalService } from '@sigma-nx/services/modal';
-import { MatSlideToggleModule } from '@angular/material/slide-toggle';
-import { FormsModule } from '@angular/forms';
-import { MatIconModule } from '@angular/material/icon';
-import { NgIf } from '@angular/common';
+
+import { FormularioModule } from '@sigma-nx/shared';
 
 @Component({
   selector: 'sigma-nx-formulario',
   standalone: true,
-  imports: [FormComponent, MatDialogModule, MatSlideToggleModule, FormsModule, MatIconModule, NgIf],
+  imports: [FormularioModule],
   templateUrl: './formulario.component.html',
   styleUrls: ['./formulario.component.scss'],
 })

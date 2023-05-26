@@ -1,4 +1,4 @@
-import { Base } from '@shared/models/base';
+import { Base } from '@sigma-nx/shared';
 import { Endereco } from '@shared/models/endereco';
 import { Telefone } from '@shared/models/telefone';
 

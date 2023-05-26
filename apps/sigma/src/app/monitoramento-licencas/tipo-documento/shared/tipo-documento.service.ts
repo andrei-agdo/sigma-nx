@@ -1,7 +1,7 @@
 import { CrudService } from '@core/services/crud.service';
 import { TipoDocumento } from './tipo-documento';
 import { Injectable } from '@angular/core';
-import { Base } from '@shared/models/base';
+import { Base } from '@sigma-nx/shared';
 
 @Injectable({
   providedIn: 'root',

@@ -1,4 +1,4 @@
-import { Base } from '@shared/models/base';
+import { Base } from '@sigma-nx/shared';
 
 export interface UnidadeMedidaSimplificado extends Base {
   descricao?: string;
