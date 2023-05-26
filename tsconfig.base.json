@@ -27,6 +27,9 @@
       "@sigma-nx/administrativo/departamentos": [
         "libs/administrativo/departamentos/src/index.ts"
       ],
+      "@sigma-nx/administrativo/gestoes": [
+        "libs/administrativo/gestoes/src/index.ts"
+      ],
       "@sigma-nx/administrativo/usuarios": [
         "libs/administrativo/usuarios/src/index.ts"
       ],

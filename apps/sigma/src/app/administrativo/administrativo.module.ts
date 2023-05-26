@@ -12,7 +12,7 @@ const routes: Routes = [
     path: 'gestoes',
     title: 'Gestões',
     loadChildren: () =>
-      import('./gestoes/gestoes.module').then((m) => m.GestoesModule),
+      import('@sigma-nx/administrativo/gestoes').then((m) => m.GestoesModule),
   },
   {
     path: 'departamentos',
