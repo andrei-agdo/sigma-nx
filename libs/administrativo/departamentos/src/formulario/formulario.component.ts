@@ -11,7 +11,6 @@ import { FormularioModule } from '@sigma-nx/shared';
   selector: 'sigma-nx-formulario',
   standalone: true,
   imports: [FormularioModule],
-  providers: [ModalService],
   templateUrl: './formulario.component.html',
   styleUrls: ['./formulario.component.scss'],
 })
