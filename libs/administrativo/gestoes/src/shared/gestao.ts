@@ -1,3 +1,2 @@
-import { Base } from "./base";
-
+import { Base } from '@sigma-nx/shared';
 export type Gestao = Base;

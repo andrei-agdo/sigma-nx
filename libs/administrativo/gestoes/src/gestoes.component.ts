@@ -3,7 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { TablePagination } from '@sigma-nx/components/table';
 import { Gestao } from './shared/gestao';
 import { Component } from '@angular/core';
-import { Filter } from './shared/filter';
+import { Filter } from '@sigma-nx/shared';
 
 @Component({
   selector: 'sigma-nx-gestoes',

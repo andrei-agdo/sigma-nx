@@ -1,4 +1,4 @@
-import { CrudService } from '@sigma-nx/services/http';
+import { CrudService } from '@sigma-nx/shared';
 import { Gestao } from './gestao';
 import { Injectable } from '@angular/core';
 

@@ -1,8 +1,8 @@
 import { Observable } from 'rxjs';
-import { Filter } from "./filter";
+import { Filter } from './filter';
 import { Injectable, inject, Inject } from '@angular/core';
-import { Http } from './http.service';
-import { Base } from "./base";
+import { Base } from './base';
+import { Http } from '@sigma-nx/services/http';
 
 interface AtualizacaoAtivo {
   readonly id: string;

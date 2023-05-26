@@ -1,4 +1,4 @@
-import { Filter } from './shared/filter';
+import { Filter } from '@sigma-nx/shared';
 import { TemasService } from './shared/temas.service';
 import { MatDialog } from '@angular/material/dialog';
 import { TablePagination } from '@sigma-nx/components/table';
