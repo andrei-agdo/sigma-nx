@@ -5,7 +5,7 @@ import { MatDialog } from '@angular/material/dialog';
 
 import { TablePagination } from '@sigma-nx/components/table';
 import { TipoEquipamento } from './shared/tipo-equipamento';
-import { Filter } from './../../shared/models/filter';
+import { Filter } from '@sigma-nx/shared';
 
 @Component({
   selector: 'sigma-nx-tipo-equipamento',

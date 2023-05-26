@@ -4,7 +4,7 @@ import { UnidadeMedidaService } from './shared/unidade-medida.service';
 import { MatDialog } from '@angular/material/dialog';
 import { TablePagination } from '@sigma-nx/components/table';
 import { UnidadeMedida } from './shared/unidade-medida';
-import { Filter } from './../../shared/models/filter';
+import { Filter } from '@sigma-nx/shared';
 
 @Component({
   selector: 'sigma-nx-unidade-medida',

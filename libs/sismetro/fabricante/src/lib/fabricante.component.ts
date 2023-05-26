@@ -50,7 +50,7 @@ export class FabricanteComponent {
 
     this.fabricantesService
       .atualizarAtivo(fabricante)
-      .subscribe(() => load.hide());
+      .subscribe();
   }
 
   changePage(page: TablePagination) {
