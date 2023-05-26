@@ -2,22 +2,12 @@ import { AmbitoRoutingModule } from './ambito-routing.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AmbitoComponent } from './ambito.component';
-import { InputModule } from '@sigma-nx/components/input';
-import { TableModule } from '@sigma-nx/components/table';
-import { FilterButtonComponent } from '@sigma-nx/components/filter-button';
-import { SearchButtonComponent } from '@sigma-nx/components/search-button';
-import { FormsModule } from '@angular/forms';
-import { MatIconModule } from '@angular/material/icon';
-import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { ModalService } from '@sigma-nx/services/modal';
+import { SharedModule } from '@sigma-nx/shared';
 
 @NgModule({
   declarations: [AmbitoComponent],
-  imports: [CommonModule, AmbitoRoutingModule, TableModule,
-    FilterButtonComponent,
-    SearchButtonComponent,
-    InputModule,
-    FormsModule,
-    MatIconModule,
-    MatSlideToggleModule],
+  providers: [ModalService],
+  imports: [CommonModule, AmbitoRoutingModule, SharedModule],
 })
 export class AmbitoModule {}

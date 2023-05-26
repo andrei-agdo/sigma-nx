@@ -51,6 +51,7 @@ import {
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 import { MatMenuModule } from '@angular/material/menu';
+import { ModalService } from '@sigma-nx/services/modal';
 
 @NgModule({
   imports: [
@@ -89,6 +90,7 @@ import { MatMenuModule } from '@angular/material/menu';
   ],
   providers: [
     AlertService,
+    ModalService,
     ...CurrencyList,
     { provide: MatPaginatorIntl, useValue: CustomPaginator() },
 

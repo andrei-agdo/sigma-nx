@@ -35,11 +35,8 @@ export class TipoComponent {
   getTipos(resetPage = false) {
     if (resetPage) this.filter.pagina = 0;
 
-
-
     this.tipoService.get(this.filter).subscribe((tipos) => {
       this.tipos = tipos;
-
     });
   }
 

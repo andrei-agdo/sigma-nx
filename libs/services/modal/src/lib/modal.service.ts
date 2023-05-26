@@ -2,7 +2,9 @@ import { MatDialog } from '@angular/material/dialog';
 import { Injectable } from '@angular/core';
 import { ModalComponent } from './modal.component';
 
-@Injectable()
+@Injectable(
+ { providedIn: 'root' }
+)
 export class ModalService {
   constructor(private matDialog: MatDialog) { }
 

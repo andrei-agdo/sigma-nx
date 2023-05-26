@@ -4,9 +4,11 @@ import { CommonModule } from '@angular/common';
 import { SharedModule } from '@sigma-nx/shared';
 import { AplicabilidadeRoutingModule } from './aplicabilidade-routing.module';
 import { AplicabilidadeComponent } from './aplicabilidade.component';
+import { ModalService } from '@sigma-nx/services/modal';
 
 @NgModule({
   declarations: [AplicabilidadeComponent],
+  providers: [ModalService],
   imports: [CommonModule, AplicabilidadeRoutingModule, SharedModule],
 })
 export class AplicabilidadeModule {}

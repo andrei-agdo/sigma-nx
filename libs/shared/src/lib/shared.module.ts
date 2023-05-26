@@ -6,6 +6,7 @@ import { SearchButtonComponent } from '@sigma-nx/components/search-button';
 import { FormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { ModalService } from '@sigma-nx/services/modal';
 @NgModule({
   imports: [
     FilterButtonComponent,
@@ -17,5 +18,6 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
     FormsModule,
     MatIconModule,
     MatSlideToggleModule],
+  providers: [ModalService],
 })
 export class SharedModule { }

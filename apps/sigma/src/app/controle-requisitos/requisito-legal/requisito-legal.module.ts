@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { RequisitoLegalComponent } from './requisito-legal.component';
 import { RequisitoLegalService } from './shared/requisito-legal.service';
 import { RouterModule, Routes } from '@angular/router';
+import { ModalService } from '@sigma-nx/services/modal';
 
 const routes: Routes = [
   { path: '', component: RequisitoLegalComponent },
@@ -32,6 +33,6 @@ const routes: Routes = [
 @NgModule({
   declarations: [RequisitoLegalComponent],
   imports: [CommonModule, RouterModule.forChild(routes), SharedModule],
-  providers: [RequisitoLegalService],
+  providers: [RequisitoLegalService, ModalService],
 })
 export class RequisitoLegalModule { }

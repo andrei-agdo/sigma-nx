@@ -12,7 +12,7 @@ import { Observable, of, timer } from 'rxjs';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 import { retry, map, take } from 'rxjs/operators';
 export const environment = {
-  apiMock: 'https://siscom-dev.cebrace.com.br/api/v1'
+  apiMock: 'https://agdo-server.appspot.com'
 }
 @Injectable({
   providedIn: 'root',

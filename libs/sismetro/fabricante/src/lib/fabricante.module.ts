@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { FabricanteComponent } from './fabricante.component';
 import { RouterModule, Routes } from '@angular/router';
 import { NgxMaskModule } from 'ngx-mask';
+import { ModalService } from '@sigma-nx/services/modal';
 
 const routes: Routes = [
   { path: '', component: FabricanteComponent },
@@ -20,6 +21,7 @@ const routes: Routes = [
 ];
 @NgModule({
   declarations: [FabricanteComponent],
+  providers: [ModalService],
   imports: [CommonModule, SharedModule, RouterModule.forChild(routes), NgxMaskModule.forRoot()],
 })
 export class FabricanteModule {}
