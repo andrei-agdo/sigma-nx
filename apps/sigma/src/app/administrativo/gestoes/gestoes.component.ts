@@ -1,7 +1,7 @@
 import { GestoesService } from './shared/gestoes.service';
 import { MatDialog } from '@angular/material/dialog';
 import { load } from '@core/utils/load/load.component';
-import { TablePagination } from '@shared/components/table/models/table-pagination.model';
+import { TablePagination } from '@sigma-nx/components/table';
 import { Gestao } from './shared/gestao';
 import { Filter } from '@shared/models/filter';
 import { Component } from '@angular/core';

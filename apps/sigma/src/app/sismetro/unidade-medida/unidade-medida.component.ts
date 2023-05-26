@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { load } from '@core/utils/load/load.component';
 import { UnidadeMedidaService } from './shared/unidade-medida.service';
 import { MatDialog } from '@angular/material/dialog';
-import { TablePagination } from '@shared/components/table/models/table-pagination.model';
+import { TablePagination } from '@sigma-nx/components/table';
 import { UnidadeMedida } from './shared/unidade-medida';
 import { Filter } from './../../shared/models/filter';
 

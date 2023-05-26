@@ -3,10 +3,10 @@ import { Component, Input, inject, Output, EventEmitter, ViewChild } from '@angu
 import { MatButtonModule } from '@angular/material/button';
 import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
-import { TableModule } from '@shared/components/table/table.module';
+import { TableModule } from '@sigma-nx/components/table';
 import { MatDialog } from '@angular/material/dialog';
 import { Prazo } from '../../../shared/prazos';
-import { TableComponent } from '@shared/components/table/table.component';
+import { TableComponent } from '@sigma-nx/components/table';
 import { Base } from '@shared/models/base';
 
 @Component({

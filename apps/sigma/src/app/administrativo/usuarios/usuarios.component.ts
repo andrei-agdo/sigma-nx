@@ -1,5 +1,5 @@
 import { PerfilService } from '@shared/services/perfil.service';
-import { TablePagination } from '@shared/components/table/models/table-pagination.model';
+import { TablePagination } from '@sigma-nx/components/table';
 import { Filter } from '@shared/models/filter';
 import { Usuario } from './shared/usuario';
 import { MatDialog } from '@angular/material/dialog';

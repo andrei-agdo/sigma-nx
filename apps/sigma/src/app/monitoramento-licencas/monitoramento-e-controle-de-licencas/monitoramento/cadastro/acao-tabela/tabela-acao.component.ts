@@ -3,10 +3,10 @@ import { Component, inject, Input, Output, EventEmitter, ViewChild } from '@angu
 import { MatButtonModule } from '@angular/material/button';
 import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
-import { TableModule } from '@shared/components/table/table.module';
+import { TableModule } from '@sigma-nx/components/table';
 import { MatDialog } from '@angular/material/dialog';
 import { Acao } from '../../../shared/acoes';
-import { TableComponent } from '@shared/components/table/table.component';
+import { TableComponent } from '@sigma-nx/components/table';
 import { MatMenuModule } from '@angular/material/menu';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { MonitoramentoEControleDeLicencasService } from '../../../shared/monitoramento-e-controle-de-licencas.service';

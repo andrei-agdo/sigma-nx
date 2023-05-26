@@ -1,7 +1,7 @@
 import { load } from '@core/utils/load/load.component';
 import { OrgaoControleService } from './shared/orgao-controle.service';
 import { MatDialog } from '@angular/material/dialog';
-import { TablePagination } from '@shared/components/table/models/table-pagination.model';
+import { TablePagination } from '@sigma-nx/components/table';
 import { OrgaoControle } from './shared/orgao-controle';
 import { Filter } from './../../shared/models/filter';
 import { Component } from '@angular/core';

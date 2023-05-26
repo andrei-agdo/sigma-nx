@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 import { load } from '@core/utils/load/load.component';
 import { TipoEquipamentoService } from './shared/tipo-equipamento.service';
 import { MatDialog } from '@angular/material/dialog';
-import { TablePagination } from '@shared/components/table/models/table-pagination.model';
+
+import { TablePagination } from '@sigma-nx/components/table';
 import { TipoEquipamento } from './shared/tipo-equipamento';
 import { Filter } from './../../shared/models/filter';
 
@@ -29,7 +30,7 @@ export class TipoEquipamentoComponent {
   constructor(
     private matDialog: MatDialog,
     private tiposEquipamentoService: TipoEquipamentoService
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.getTiposEquipamento();

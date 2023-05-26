@@ -208,11 +208,14 @@ export class InputComponent implements ControlValueAccessor, AfterContentInit {
     this._ngModel = value;
   }
 
-  registerOnChange(fn: any): void {
-    throw new Error('Method not implemented.');
+  protected onChange: unknown;
+  public registerOnChange(fn: unknown) {
+    this.onChange = fn;
   }
-  registerOnTouched(fn: any): void {
-    throw new Error('Method not implemented.');
+
+  protected onTouch: unknown;
+  public registerOnTouched(fn: unknown) {
+    this.onTouch = fn;
   }
 
   public checkError(field: string): boolean {

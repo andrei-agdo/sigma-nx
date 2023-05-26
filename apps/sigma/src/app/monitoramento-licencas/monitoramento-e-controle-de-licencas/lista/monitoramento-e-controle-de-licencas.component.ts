@@ -1,4 +1,4 @@
-import { TablePagination } from '@shared/components/table/models/table-pagination.model';
+import { TablePagination } from '@sigma-nx/components/table';
 import { load } from '@core/utils/load/load.component';
 import { Filter } from '@shared/models/filter';
 import { Component, inject } from '@angular/core';

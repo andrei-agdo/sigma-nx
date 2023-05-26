@@ -4,7 +4,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { OrigemService } from './shared/origem.service';
 import { Origem } from './shared/origem';
 import { load } from '@core/utils/load/load.component';
-import { TablePagination } from '@shared/components/table/models/table-pagination.model';
+import { TablePagination } from '@sigma-nx/components/table';
 import { Filter } from '@shared/models/filter';
 @Component({
   selector: 'sigma-nx-origem',

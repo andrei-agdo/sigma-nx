@@ -1,3 +1,4 @@
+import { TableModule } from '@sigma-nx/components/table';
 import { CustomPaginator } from '@core/services/customPaginatorConfiguration';
 import { MatPaginatorIntl } from '@angular/material/paginator';
 import { ModalService } from './components/modal/modal.service';
@@ -8,7 +9,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxMaskModule } from 'ngx-mask';
 import { FormComponent } from './components/form/form.component';
 import { ButtonComponent } from './components/button/button.component';
-import { TableModule } from './components/table/table.module';
 import { FilterButtonComponent } from './components/filter-button/filter-button.component';
 import { SearchButtonComponent } from './components/search-button/search-button.component';
 import { ModalComponent } from './components/modal/modal.component';
