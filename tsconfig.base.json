@@ -52,6 +52,5 @@
     }
   },
   "exclude": ["node_modules", "tmp"],
-
-  "include": ["libs/*","**/*.ts"]
+  "include": ["libs/*", "**/*.ts"]
 }

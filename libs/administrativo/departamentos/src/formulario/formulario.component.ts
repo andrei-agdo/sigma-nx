@@ -13,6 +13,7 @@ import { NgIf } from '@angular/common';
   selector: 'sigma-nx-formulario',
   standalone: true,
   imports: [FormComponent, MatDialogModule, InputModule, MatIconModule, MatSlideToggleModule,FormsModule, NgIf],
+  providers: [ModalService],
   templateUrl: './formulario.component.html',
   styleUrls: ['./formulario.component.scss'],
 })

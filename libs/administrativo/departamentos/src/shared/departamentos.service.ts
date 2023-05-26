@@ -1,4 +1,4 @@
-import { CrudService } from "./crud.service";
+import { CrudService } from '@sigma-nx/services/http';
 import { Departamento } from './departamento';
 import { Injectable } from '@angular/core';
 

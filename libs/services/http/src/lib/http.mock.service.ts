@@ -1,58 +1,48 @@
 // serviço de http geral
 
-import { environment } from './environment';
 
 import { Injectable, SecurityContext } from '@angular/core';
 import {
   HttpClient,
   HttpErrorResponse,
   HttpHeaders,
-  HttpParams,
   HttpResponse,
 } from '@angular/common/http';
 import { Observable, of, timer } from 'rxjs';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 import { retry, map, take } from 'rxjs/operators';
-
-interface OptionsHttp {
-  headers?:
-  | HttpHeaders
-  | {
-    [header: string]: string | string[];
-  };
-  params?: HttpParams | {
-    [param: string]: string | number | boolean | ReadonlyArray<string | number | boolean>;
-  };
-  cache?: boolean | number;
+export const environment = {
+  apiMock: 'https://siscom-dev.cebrace.com.br/api/v1'
 }
-
-@Injectable()
-export class Http {
-  private cacheEntityGet: {
-    [url: string]: unknown;
-  } = {};
-
-  constructor(private http: HttpClient, private sanitizer: DomSanitizer) { }
+@Injectable({
+  providedIn: 'root',
+})
+export class HttpMock {
+  constructor(private http: HttpClient, private sanitizer: DomSanitizer) {}
 
   /**
    * Função de requisição HTTP Get
    *
    * @param {string} url URL ser acessada
+   * @type {T} Retorna um Observable do tipo T
    *
    */
-  public get = <T>(
-    url: string,
-    options?: OptionsHttp
-  ): Observable<T> => {
-    if (options?.cache && this.cacheEntityGet[url])
-      return of(this.cacheEntityGet[url] as T)
 
+  public get<T>(
+    url: string,
+    options?: {
+      headers?:
+        | HttpHeaders
+        | {
+            [header: string]: string | string[];
+          };
+      params?: {
+        [param: string]: string | number | boolean;
+      };
+    }
+  ): Observable<T> {
     return this.http
-      .get<T>(
-        this.sanitizer.sanitize(
-          SecurityContext.URL,
-          this.sanitizer.bypassSecurityTrustResourceUrl(environment.api + url)
-        )!,
+      .get<T>(environment.apiMock + url,
         {
           ...options,
           observe: 'response',
@@ -60,44 +50,25 @@ export class Http {
         }
       )
       .pipe(
-        map((res: HttpResponse<T>) => this.mapResponse(res, url, options)),
-        take(1),
         retry({
           count: 3,
           delay: (error: HttpErrorResponse) =>
             error.status >= 500 ? timer(1000) : of(),
-        })
+        }),
+        map((res: HttpResponse<T>) =>
+          res.headers.has('x-total-quantidade')
+            ? this.map(res)
+            : (res.body as T)
+        ),
+        take(1)
       );
-  };
+  }
 
-  private map = <T>(res: HttpResponse<T>) => {
+  private map<T>(res: HttpResponse<T>) {
     const _res: T & { length?: number } = res.body!;
     _res.length = Number(res.headers.get('x-total-quantidade'));
     return _res;
   }
-
-  private mapResponse = <T>(res: HttpResponse<T>, url: string, options?: OptionsHttp) => {
-    {
-      const response = res.headers.has('x-total-quantidade')
-        ? this.map(res)
-        : (res.body as T);
-
-      queueMicrotask(() => {
-        if (options?.cache) {
-          this.cacheEntityGet[url] = response;
-          let cacheTimeout = 60;
-          if (typeof options.cache === 'number')
-            cacheTimeout = options.cache;
-
-          setTimeout(() => {
-            delete this.cacheEntityGet[url];
-          }, cacheTimeout * 1000);
-        }
-      });
-
-      return response;
-    }
-  };
 
   /**
    * Função de requisição HTTP Get
@@ -112,10 +83,10 @@ export class Http {
     url: string,
     options?: {
       headers?:
-      | HttpHeaders
-      | {
-        [header: string]: string | string[];
-      };
+        | HttpHeaders
+        | {
+            [header: string]: string | string[];
+          };
       params?: {
         [param: string]: string | number | boolean;
       };
@@ -155,24 +126,17 @@ export class Http {
     data: SendType,
     options?: {
       headers?:
-      | HttpHeaders
-      | {
-        [header: string]: string | string[];
-      };
+        | HttpHeaders
+        | {
+            [header: string]: string | string[];
+          };
       params?: {
         [param: string]: string | number | boolean;
       };
-      cache?: boolean | number;
     }
   ): Observable<ReturnType> {
-
-    queueMicrotask(() => {
-      if (this.cacheEntityGet[url])
-        delete this.cacheEntityGet[url];
-    });
-
     const _safeResourceUrl: SafeUrl = this.sanitizer.bypassSecurityTrustUrl(
-      environment.api + url
+      environment.apiMock + url
     );
     const _safeUrl: string = this.sanitizer.sanitize(
       4,
@@ -204,7 +168,7 @@ export class Http {
     const _responseType = returnText ? ('text' as 'json') : 'json';
 
     const _safeResourceUrl: SafeUrl = this.sanitizer.bypassSecurityTrustUrl(
-      environment.api + url
+      environment.apiMock + url
     );
     const _safeUrl: string = this.sanitizer.sanitize(
       4,
@@ -228,21 +192,17 @@ export class Http {
     data: SendType,
     options?: {
       headers?:
-      | HttpHeaders
-      | {
-        [header: string]: string | string[];
-      };
+        | HttpHeaders
+        | {
+            [header: string]: string | string[];
+          };
       params?: {
         [param: string]: string | number | boolean;
       };
     }
   ): Observable<ReturnType> {
-    queueMicrotask(() => {
-      if (this.cacheEntityGet[url])
-        delete this.cacheEntityGet[url];
-    });
     const _safeResourceUrl: SafeUrl = this.sanitizer.bypassSecurityTrustUrl(
-      environment.api + url
+      environment.apiMock + url
     );
     const _safeUrl: string = this.sanitizer.sanitize(
       4,
@@ -264,7 +224,7 @@ export class Http {
    */
   public delete(url: string): Observable<boolean> {
     const _safeResourceUrl: SafeUrl = this.sanitizer.bypassSecurityTrustUrl(
-      environment.api + url
+      environment.apiMock + url
     );
     const _safeUrl: string = this.sanitizer.sanitize(
       4,

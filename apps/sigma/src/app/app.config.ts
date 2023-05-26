@@ -12,7 +12,8 @@ import {
 } from '@angular/router';
 import { appRoutes } from './app.routes';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpModule } from '@sigma-nx/services/modal';
+import { HttpModule } from '@sigma-nx/services/http';
+import { ModalService } from '@sigma-nx/services/modal';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -26,6 +27,6 @@ export const appConfig: ApplicationConfig = {
         urlUpdateStrategy: 'eager',
         onSameUrlNavigation: 'reload'
       })),
-    importProvidersFrom([BrowserAnimationsModule,HttpModule])
+    importProvidersFrom([BrowserAnimationsModule,HttpModule,ModalService])
   ],
 };

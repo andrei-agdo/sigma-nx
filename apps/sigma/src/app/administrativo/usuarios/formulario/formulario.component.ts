@@ -1,7 +1,7 @@
 import { PerfilService } from '@shared/services/perfil.service';
 import { ModalService } from '@sigma-nx/services/modal';
-import { Gestao } from './../../gestoes/shared/gestao';
-import { GestoesService } from './../../gestoes/shared/gestoes.service';
+import { Gestao } from '@sigma-nx/administrativo/gestoes';
+import { GestoesService } from '@sigma-nx/administrativo/gestoes';
 import { Item } from '@shared/models/item.model';
 import { UsuariosService } from './../shared/usuarios.service';
 import { FormComponent } from '@sigma-nx/components/input';

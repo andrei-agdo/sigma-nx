@@ -1,6 +1,5 @@
 // serviço de http geral
 
-import { environment } from './environment';
 
 import { Injectable, SecurityContext } from '@angular/core';
 import {
@@ -13,7 +12,9 @@ import {
 import { Observable, of, timer } from 'rxjs';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 import { retry, map, take } from 'rxjs/operators';
-
+export const environment = {
+  api: 'https://siscom-dev.cebrace.com.br/api/v1'
+}
 interface OptionsHttp {
   headers?:
   | HttpHeaders
@@ -28,6 +29,9 @@ interface OptionsHttp {
 
 @Injectable()
 export class Http {
+
+
+
   private cacheEntityGet: {
     [url: string]: unknown;
   } = {};
