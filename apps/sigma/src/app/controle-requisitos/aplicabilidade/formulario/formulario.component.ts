@@ -4,7 +4,7 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { ModalService } from '@shared/components/modal/modal.service';
 import { AplicabilidadeService } from '../shared/aplicabilidade.service';
 import { load } from '@core/utils/load/load.component';
-import { FormComponent } from '@shared/components/form/form.component';
+import { FormComponent } from '@sigma-nx/components/input';
 import { Aplicabilidade } from './../shared/aplicabilidade';
 import { SharedModule } from '@shared/shared.module';
 

@@ -32,7 +32,11 @@
           "libs/components/input/**/*.ts",
           "libs/components/input/**/*.html",
           "libs/components/table/**/*.ts",
-          "libs/components/table/**/*.html"
+          "libs/components/table/**/*.html",
+          "libs/components/search-button/**/*.ts",
+          "libs/components/search-button/**/*.html",
+          "libs/components/filter-button/**/*.ts",
+          "libs/components/filter-button/**/*.html"
         ]
       }
     }

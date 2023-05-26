@@ -5,10 +5,11 @@ import {
   ContentChildren,
   QueryList,
 } from '@angular/core';
-import { InputComponent } from '@sigma-nx/components/input';
+import { InputComponent } from './input.component';
 
 @Component({
   selector: 'sigma-nx-form',
+  standalone: true,
   template: `<ng-content></ng-content>`,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

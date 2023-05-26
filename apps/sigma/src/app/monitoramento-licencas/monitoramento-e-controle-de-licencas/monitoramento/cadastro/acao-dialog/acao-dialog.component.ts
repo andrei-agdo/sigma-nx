@@ -1,6 +1,6 @@
 import { Component, Inject, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormComponent } from '@shared/components/form/form.component';
+import { FormComponent } from '@sigma-nx/components/input';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { SharedModule } from '@shared/shared.module';
 import { porcentagens } from '../shared/porcentagem';

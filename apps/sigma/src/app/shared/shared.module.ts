@@ -1,3 +1,4 @@
+
 import { TableModule } from '@sigma-nx/components/table';
 import { CustomPaginator } from '@core/services/customPaginatorConfiguration';
 import { MatPaginatorIntl } from '@angular/material/paginator';
@@ -7,15 +8,14 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxMaskModule } from 'ngx-mask';
-import { FormComponent } from './components/form/form.component';
-import { ButtonComponent } from './components/button/button.component';
-import { FilterButtonComponent } from './components/filter-button/filter-button.component';
-import { SearchButtonComponent } from './components/search-button/search-button.component';
+import { FormComponent } from '@sigma-nx/components/input';
+import { FilterButtonComponent } from '@sigma-nx/components/filter-button';
 import { ModalComponent } from './components/modal/modal.component';
 import { CurrencyList } from '@core/utils/currency.config';
 import { InputModule } from '@sigma-nx/components/input';
 
 import { MaterialModule } from '@sigma-nx/material';
+import { SearchButtonComponent } from '@sigma-nx/components/search-button';
 // Antes de colocar um item aqui faça a seguinte pergunta:
 
 // Esse componente/pipe/etc..., vai (ou poderá) ser utilizado em VÁRIOS lugares?
@@ -37,24 +37,22 @@ import { MaterialModule } from '@sigma-nx/material';
     CommonModule,
     ReactiveFormsModule,
     NgxMaskModule.forRoot(),
+    FormComponent,
+    FilterButtonComponent,
+    SearchButtonComponent
   ],
   declarations: [
-    FormComponent,
-    ButtonComponent,
     AlertComponent,
-    FilterButtonComponent,
-    SearchButtonComponent,
     ModalComponent,
   ],
   exports: [
     MaterialModule,
     InputModule,
     CommonModule,
-    FormComponent,
     NgxMaskModule,
-    ButtonComponent,
     FormsModule,
     TableModule,
+    FormComponent,
     FilterButtonComponent,
     SearchButtonComponent
   ],

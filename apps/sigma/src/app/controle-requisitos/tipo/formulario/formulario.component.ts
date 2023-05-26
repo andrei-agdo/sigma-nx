@@ -1,7 +1,7 @@
 import { ModalService } from '@shared/components/modal/modal.service';
 import { TipoService } from './../shared/tipo.service';
 import { load } from '@core/utils/load/load.component';
-import { FormComponent } from '@shared/components/form/form.component';
+import { FormComponent } from '@sigma-nx/components/input';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Tipo } from './../shared/tipo';
 import { Component, Inject } from '@angular/core';

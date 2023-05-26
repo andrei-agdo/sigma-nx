@@ -4,7 +4,7 @@ import { Gestao } from './../../gestoes/shared/gestao';
 import { GestoesService } from './../../gestoes/shared/gestoes.service';
 import { Item } from '@shared/models/item.model';
 import { UsuariosService } from './../shared/usuarios.service';
-import { FormComponent } from '@shared/components/form/form.component';
+import { FormComponent } from '@sigma-nx/components/input';
 import { Observable } from 'rxjs';
 import { Component, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';

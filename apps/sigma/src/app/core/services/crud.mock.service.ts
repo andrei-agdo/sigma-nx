@@ -28,7 +28,7 @@ export class CrudMockService<T extends Base, TSimplificado extends Base = T> {
   public mapGet(filter?: Filter & Partial<T>): {
     [k: string]: string | number | boolean;
   } {
-    let _filter = { ...filter } as Filter & T;
+    const _filter = { ...filter } as Filter & T;
 
     if (!_filter.itensPorPagina) _filter.itensPorPagina = 99;
     if (!_filter.pagina) _filter.pagina = 0;

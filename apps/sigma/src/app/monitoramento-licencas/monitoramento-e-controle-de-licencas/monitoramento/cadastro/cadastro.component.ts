@@ -2,7 +2,7 @@ import { MonitoramentoEControleDeLicencasService } from '../../shared/monitorame
 import { Component, OnInit, inject } from '@angular/core';
 import { MonitoramentoEControleDeLicenca } from '../../shared/monitoramento-e-controle-de-licencas';
 import { Router, RouterModule } from '@angular/router';
-import { FormComponent } from '@shared/components/form/form.component';
+import { FormComponent } from '@sigma-nx/components/input';
 
 import { MonitoramentoFacade } from '../../shared/monitoramento.facade';
 import { SharedModule } from '@shared/shared.module';

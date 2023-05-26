@@ -4,7 +4,7 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { load } from '@core/utils/load/load.component';
 import { Gestao } from '../shared/gestao';
 import { Component, Inject } from '@angular/core';
-import { FormComponent } from '@shared/components/form/form.component';
+import { FormComponent } from '@sigma-nx/components/input';
 import { SharedModule } from '@shared/shared.module';
 
 @Component({

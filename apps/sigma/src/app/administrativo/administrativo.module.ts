@@ -18,7 +18,7 @@ const routes: Routes = [
     path: 'departamentos',
     title: 'Departamentos',
     loadChildren: () =>
-      import('./departamentos/departamentos.module').then(
+      import('@sigma-nx/administrativo/departamentos').then(
         (m) => m.DepartamentosModule
       ),
   },

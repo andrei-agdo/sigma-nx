@@ -1,7 +1,7 @@
 import { debounceTime, finalize, map, switchMap, tap } from 'rxjs/operators';
 import { toSignal, toObservable } from '@angular/core/rxjs-interop';
 import { load } from '@core/utils/load/load.component';
-import { FormComponent } from '@shared/components/form/form.component';
+import { FormComponent } from '@sigma-nx/components/input';
 import { RequisitoLegal } from './../shared/requisito-legal';
 import { Component, signal, OnInit, Input } from '@angular/core';
 import { SharedModule } from '@shared/shared.module';

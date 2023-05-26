@@ -4,7 +4,7 @@ import { Component, Inject } from '@angular/core';
 import { load } from '@core/utils/load/load.component';
 import { ModalService } from '@shared/components/modal/modal.service';
 import { AmbitoService } from '../shared/ambito.service';
-import { FormComponent } from '@shared/components/form/form.component';
+import { FormComponent } from '@sigma-nx/components/input';
 import { Ambito } from '../shared/ambito';
 import { SharedModule } from '@shared/shared.module';
 
