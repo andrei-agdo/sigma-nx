@@ -1,10 +1,5 @@
 import { MatDialog } from '@angular/material/dialog';
 import { inject } from '@angular/core';
-import { Tipo } from '../../tipo/shared/tipo';
-import { Origem } from '../../origem/shared/origem';
-
-import { OrigemService } from './../../origem/shared/origem.service';
-import { TipoService } from './../../tipo/shared/tipo.service';
 import { Observable, of } from 'rxjs';
 import { RequisitoLegalService } from './requisito-legal.service';
 import { Router } from '@angular/router';
@@ -19,13 +14,15 @@ import { Gestao, GestoesService } from '@sigma-nx/administrativo/gestoes';
 import { Tema, TemasService } from '@sigma-nx/administrativo/temas';
 import { AmbitoService } from '@sigma-nx/controle-requisitos/ambito';
 import { AplicabilidadeService } from 'libs/controle-requisitos/aplicabilidade/src/lib/shared/aplicabilidade.service';
+import { OrigemService } from '@sigma-nx/controle-requisitos/origem';
+import { TipoService } from '@sigma-nx/controle-requisitos/tipo-requisito';
 export class RequisitoLegalFacade {
 
   readonly temas$: Observable<Tema[]> = inject(TemasService).get({ ativo: true }, true);
 
-  readonly tipos$: Observable<Tipo[]> = inject(TipoService).get({ ativo: true }, true);
+  readonly tipos$ = inject(TipoService).get({ ativo: true }, true);
 
-  readonly origens$: Observable<Origem[]> = inject(OrigemService).get({ ativo: true }, true);
+  readonly origens$ = inject(OrigemService).get({ ativo: true }, true);
 
   readonly gestoes$: Observable<Gestao[]> = inject(GestoesService).get({ ativo: true }, true);
 
