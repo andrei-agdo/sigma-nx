@@ -5,7 +5,7 @@ import { FornecedorService } from '../../fornecedor/shared/fornecedor.service';
 import { TipoDocumentoService } from '../../tipo-documento/shared/tipo-documento.service';
 import { TemasService } from '../../../administrativo/temas/shared/temas.service';
 import { UsuariosService } from '../../../administrativo/usuarios/shared/usuarios.service';
-import { GestoesService } from '../../../administrativo/gestoes/shared/gestoes.service';
+import { GestoesService } from '@sigma-nx/administrativo/gestoes';
 import { ModalService } from '@shared/components/modal/modal.service';
 
 export class MonitoramentoFacade  {

@@ -1,4 +1,4 @@
-import { Gestao } from '../../../administrativo/gestoes/shared/gestao';
+import { Gestao } from '@sigma-nx/administrativo/gestoes';
 import { Tema } from '../../../administrativo/temas/shared/tema';
 import { Usuario } from '../../../administrativo/usuarios/shared/usuario';
 import { OrgaoControle } from './../../orgao-controle/shared/orgao-controle';

@@ -4,8 +4,7 @@ import { Tipo } from '../../tipo/shared/tipo';
 import { Origem } from '../../origem/shared/origem';
 import { Aplicabilidade } from '../../aplicabilidade/shared/aplicabilidade';
 import { AplicabilidadeService } from './../../aplicabilidade/shared/aplicabilidade.service';
-import { Gestao } from './../../../administrativo/gestoes/shared/gestao';
-import { GestoesService } from './../../../administrativo/gestoes/shared/gestoes.service';
+
 import { OrigemService } from './../../origem/shared/origem.service';
 import { TipoService } from './../../tipo/shared/tipo.service';
 import { TemasService } from './../../../administrativo/temas/shared/temas.service';
@@ -21,6 +20,7 @@ import { Atendimento } from './atendimento';
 import { DepartamentosService } from '@sigma-nx/administrativo/departamentos';
 import { Departamento } from '@sigma-nx/administrativo/departamentos';
 import { MonitoramentoEControleDeLicencasService } from '../../../monitoramento-licencas/monitoramento-e-controle-de-licencas/shared/monitoramento-e-controle-de-licencas.service';
+import { Gestao, GestoesService } from '@sigma-nx/administrativo/gestoes';
 
 export class RequisitoLegalFacade {
 

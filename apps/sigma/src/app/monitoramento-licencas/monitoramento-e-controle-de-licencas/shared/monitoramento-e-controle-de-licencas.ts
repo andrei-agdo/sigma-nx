@@ -4,8 +4,8 @@ import { Prazo } from './prazos';
 import { Acao } from './acoes';
 import { Tema } from '../../../administrativo/temas/shared/tema';
 import { Usuario } from '../../../administrativo/usuarios/shared/usuario';
-import { Gestao } from '../../../administrativo/gestoes/shared/gestao';
 import { RequisitoLegalSimplificado } from '../../../controle-requisitos/requisito-legal/shared/requisito-legal-simplificado';
+import { Gestao } from '@sigma-nx/administrativo/gestoes';
 //TEMPORARIO
 interface Base {
   id?: string;
