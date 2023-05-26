@@ -1,1 +1,1 @@
-export * from './lib/tipo-requisito.module';
+export * from './lib/tipo.module';
