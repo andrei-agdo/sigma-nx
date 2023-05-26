@@ -1,5 +1,5 @@
 import { PerfilService } from '@shared/services/perfil.service';
-import { ModalService } from '@shared/components/modal/modal.service';
+import { ModalService } from '@sigma-nx/services/modal';
 import { Gestao } from './../../gestoes/shared/gestao';
 import { GestoesService } from './../../gestoes/shared/gestoes.service';
 import { Item } from '@shared/models/item.model';

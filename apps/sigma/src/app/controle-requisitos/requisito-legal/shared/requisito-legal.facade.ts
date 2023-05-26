@@ -7,12 +7,10 @@ import { AplicabilidadeService } from './../../aplicabilidade/shared/aplicabilid
 
 import { OrigemService } from './../../origem/shared/origem.service';
 import { TipoService } from './../../tipo/shared/tipo.service';
-import { TemasService } from './../../../administrativo/temas/shared/temas.service';
-import { Tema } from './../../../administrativo/temas/shared/tema';
 import { Observable, of } from 'rxjs';
 import { RequisitoLegalService } from './requisito-legal.service';
 import { Router } from '@angular/router';
-import { ModalService } from '@shared/components/modal/modal.service';
+import { ModalService } from '@sigma-nx/services/modal';
 import { AmbitoService } from '../../ambito/shared/ambito.service';
 import { Ambito } from '../../ambito/shared/ambito';
 import { Atendimento } from './atendimento';
@@ -21,7 +19,7 @@ import { DepartamentosService } from '@sigma-nx/administrativo/departamentos';
 import { Departamento } from '@sigma-nx/administrativo/departamentos';
 import { MonitoramentoEControleDeLicencasService } from '../../../monitoramento-licencas/monitoramento-e-controle-de-licencas/shared/monitoramento-e-controle-de-licencas.service';
 import { Gestao, GestoesService } from '@sigma-nx/administrativo/gestoes';
-
+import { Tema, TemasService } from '@sigma-nx/administrativo/temas';
 export class RequisitoLegalFacade {
 
   readonly temas$: Observable<Tema[]> = inject(TemasService).get({ ativo: true }, true);

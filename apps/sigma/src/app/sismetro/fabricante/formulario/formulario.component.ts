@@ -1,6 +1,6 @@
 import { load } from '@core/utils/load/load.component';
 import { FormComponent } from '@sigma-nx/components/input';
-import { ModalService } from '@shared/components/modal/modal.service';
+import { ModalService } from '@sigma-nx/services/modal';
 import { FabricanteService } from './../shared/fabricante.service';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { Fabricante } from './../shared/fabricante';

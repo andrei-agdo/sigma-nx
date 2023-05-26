@@ -1,6 +1,6 @@
 import { load } from '@core/utils/load/load.component';
 import { FormComponent } from '@sigma-nx/components/input';
-import { ModalService } from '@shared/components/modal/modal.service';
+import { ModalService } from '@sigma-nx/services/modal';
 import { OrgaoControleService } from './../shared/orgao-controle.service';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { OrgaoControle } from './../shared/orgao-controle';

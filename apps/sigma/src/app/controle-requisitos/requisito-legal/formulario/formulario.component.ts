@@ -6,7 +6,7 @@ import { RequisitoLegal } from './../shared/requisito-legal';
 import { Component, signal, OnInit, Input } from '@angular/core';
 import { SharedModule } from '@shared/shared.module';
 import { RequisitoLegalFacade } from '../shared/requisito-legal.facade';
-import { Tema } from '../../../administrativo/temas/shared/tema';
+import { Tema } from '@sigma-nx/administrativo/temas';
 
 @Component({
   selector: 'sigma-nx-formulario',

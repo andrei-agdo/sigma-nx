@@ -5,7 +5,7 @@ import { Component, inject } from '@angular/core';
 import { RequisitoLegalFacade } from './shared/requisito-legal.facade';
 import { RequisitoLegalSimplificado } from './shared/requisito-legal-simplificado';
 import { RequisitoLegalFilter } from './shared/requisito-legal-filter';
-import { ModalService } from '@shared/components/modal/modal.service';
+import { ModalService } from '@sigma-nx/services/modal';
 
 @Component({
   selector: 'sigma-nx-requisito-legal',

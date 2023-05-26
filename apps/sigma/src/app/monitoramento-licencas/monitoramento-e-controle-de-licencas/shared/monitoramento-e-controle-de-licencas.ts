@@ -2,10 +2,11 @@ import { OrgaoControle } from '../../orgao-controle/shared/orgao-controle';
 import { Fornecedor } from '../../fornecedor/shared/fornecedor';
 import { Prazo } from './prazos';
 import { Acao } from './acoes';
-import { Tema } from '../../../administrativo/temas/shared/tema';
+
 import { Usuario } from '../../../administrativo/usuarios/shared/usuario';
 import { RequisitoLegalSimplificado } from '../../../controle-requisitos/requisito-legal/shared/requisito-legal-simplificado';
 import { Gestao } from '@sigma-nx/administrativo/gestoes';
+import { Tema } from '@sigma-nx/administrativo/temas';
 //TEMPORARIO
 interface Base {
   id?: string;

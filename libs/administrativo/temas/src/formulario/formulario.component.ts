@@ -1,19 +1,21 @@
-import { ModalService } from '@shared/components/modal/modal.service';
+import { ModalService } from '@sigma-nx/services/modal';
 import { TemasService } from './../shared/temas.service';
-import { load } from '@core/utils/load/load.component';
 import { FormComponent } from '@sigma-nx/components/input';
 import { Tema } from '../shared/tema';
-import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import {
   Component,
   Inject
 } from '@angular/core';
-import { SharedModule } from '@shared/shared.module';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { FormsModule } from '@angular/forms';
+import { MatIconModule } from '@angular/material/icon';
+import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'sigma-nx-formulario',
   standalone: true,
-  imports: [SharedModule],
+  imports: [FormComponent, MatDialogModule, MatSlideToggleModule, FormsModule, MatIconModule, NgIf],
   templateUrl: './formulario.component.html',
   styleUrls: ['./formulario.component.scss']
 })
@@ -24,8 +26,8 @@ export class FormularioComponent {
     @Inject(MAT_DIALOG_DATA) readonly data: { tema?: Tema },
     private temasService: TemasService,
     private modalService: ModalService,
-    public dialogRef: MatDialogRef<FormularioComponent,boolean>
-  ) {}
+    public dialogRef: MatDialogRef<FormularioComponent, boolean>
+  ) { }
 
   ngOnInit(): void {
     if (this.data.tema?.id)
@@ -37,17 +39,14 @@ export class FormularioComponent {
 
   salvarTema(form: FormComponent) {
     if (!form.valid()) return;
-    load.show();
     this.temasService.save(this.tema).subscribe({
       next: () => {
-        load.hide();
         this.modalService.success(
           'Tema ' + (!this.tema.id ? 'cadastrado' : 'editado') + ' com sucesso'
         );
         this.dialogRef.close(true);
       },
       error: (error) => {
-        load.hide();
         this.modalService.error(error);
       },
     });

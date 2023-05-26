@@ -30,6 +30,9 @@
       "@sigma-nx/administrativo/gestoes": [
         "libs/administrativo/gestoes/src/index.ts"
       ],
+      "@sigma-nx/administrativo/temas": [
+        "libs/administrativo/temas/src/index.ts"
+      ],
       "@sigma-nx/administrativo/usuarios": [
         "libs/administrativo/usuarios/src/index.ts"
       ],

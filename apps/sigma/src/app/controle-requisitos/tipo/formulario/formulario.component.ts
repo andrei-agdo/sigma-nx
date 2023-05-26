@@ -1,4 +1,4 @@
-import { ModalService } from '@shared/components/modal/modal.service';
+import { ModalService } from '@sigma-nx/services/modal';
 import { TipoService } from './../shared/tipo.service';
 import { load } from '@core/utils/load/load.component';
 import { FormComponent } from '@sigma-nx/components/input';

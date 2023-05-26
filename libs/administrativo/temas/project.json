@@ -1,0 +1,50 @@
+{
+  "name": "administrativo-temas",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/administrativo/temas/src",
+  "prefix": "sigma-nx",
+  "tags": [],
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/angular:ng-packagr-lite",
+      "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
+      "options": {
+        "project": "libs/administrativo/temas/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/administrativo/temas/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/administrativo/temas/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "libs/administrativo/temas/jest.config.ts",
+        "passWithNoTests": true
+      },
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "codeCoverage": true
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "libs/administrativo/temas/**/*.ts",
+          "libs/administrativo/temas/**/*.html"
+        ]
+      }
+    }
+  }
+}

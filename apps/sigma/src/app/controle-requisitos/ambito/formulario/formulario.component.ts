@@ -2,7 +2,7 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { Component, Inject } from '@angular/core';
 
 import { load } from '@core/utils/load/load.component';
-import { ModalService } from '@shared/components/modal/modal.service';
+import { ModalService } from '@sigma-nx/services/modal';
 import { AmbitoService } from '../shared/ambito.service';
 import { FormComponent } from '@sigma-nx/components/input';
 import { Ambito } from '../shared/ambito';

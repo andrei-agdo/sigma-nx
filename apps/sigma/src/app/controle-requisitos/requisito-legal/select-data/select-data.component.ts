@@ -4,7 +4,7 @@ import { Component, Inject, inject } from '@angular/core';
 import { SharedModule } from '@shared/shared.module';
 import { RequisitoLegal } from '../shared/requisito-legal';
 import { load } from '@core/utils/load/load.component';
-import { ModalService } from '@shared/components/modal/modal.service';
+import { ModalService } from '@sigma-nx/services/modal';
 import { RequisitoLegalService } from '../shared/requisito-legal.service';
 
 @Component({

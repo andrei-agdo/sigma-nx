@@ -10,7 +10,7 @@ import { LegislacaoAplicadaComponent } from './legislacao-aplicada/legislacao-ap
 import { TabelaPrazoComponent } from './prazo-tabela/tabela-prazo.component';
 import { TabelaAcaoComponent } from './acao-tabela/tabela-acao.component';
 import { load } from '@core/utils/load/load.component';
-import { Tema } from 'apps/sigma/src/app/administrativo/temas/shared/tema';
+import { Tema } from '@sigma-nx/administrativo/temas';
 
 @Component({
   selector: 'sigma-nx-cadastro',

@@ -1,16 +1,18 @@
-import { ModalService } from '@shared/components/modal/modal.service';
 import { GestoesService } from './../shared/gestoes.service';
-import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { load } from '@core/utils/load/load.component';
+import { MAT_DIALOG_DATA, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { Gestao } from '../shared/gestao';
 import { Component, Inject } from '@angular/core';
 import { FormComponent } from '@sigma-nx/components/input';
-import { SharedModule } from '@shared/shared.module';
+import { ModalService } from '@sigma-nx/services/modal';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { FormsModule } from '@angular/forms';
+import { MatIconModule } from '@angular/material/icon';
+import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'sigma-nx-formulario',
   standalone: true,
-  imports: [SharedModule],
+  imports: [FormComponent, MatDialogModule, MatSlideToggleModule, FormsModule, MatIconModule, NgIf],
   templateUrl: './formulario.component.html',
   styleUrls: ['./formulario.component.scss'],
 })
@@ -34,10 +36,8 @@ export class FormularioComponent {
 
   salvarGestao(form: FormComponent) {
     if (!form.valid()) return;
-    load.show();
     this.gestaoService.save(this.gestao).subscribe({
       next: () => {
-        load.hide();
         this.modalService.success(
           'Gestão ' +
           (!this.gestao.id ? 'cadastrada' : 'editada') +
@@ -46,7 +46,6 @@ export class FormularioComponent {
         this.dialogRef.close(true);
       },
       error: (error) => {
-        load.hide();
         this.modalService.error(error);
       },
     });

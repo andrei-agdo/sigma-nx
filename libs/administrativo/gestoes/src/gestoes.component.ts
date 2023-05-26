@@ -1,10 +1,9 @@
 import { GestoesService } from './shared/gestoes.service';
 import { MatDialog } from '@angular/material/dialog';
-import { load } from '@core/utils/load/load.component';
 import { TablePagination } from '@sigma-nx/components/table';
 import { Gestao } from './shared/gestao';
-import { Filter } from '@shared/models/filter';
 import { Component } from '@angular/core';
+import { Filter } from 'libs/shared/filter';
 
 @Component({
   selector: 'sigma-nx-gestoes',
@@ -38,19 +37,14 @@ export class GestoesComponent {
   getGestoes(resetPage = false) {
     if (resetPage) this.filter.pagina = 0;
 
-    load.show();
 
     this.gestoesService.get(this.filter).subscribe((gestoes) => {
       this.gestoes = gestoes;
-      load.hide();
     });
   }
 
   changeStatus(gestao: Gestao) {
-    load.show();
-    this.gestoesService.atualizarAtivo(gestao).subscribe(() => {
-      load.hide();
-    });
+    this.gestoesService.atualizarAtivo(gestao).subscribe();
   }
 
   changePage(page: TablePagination) {

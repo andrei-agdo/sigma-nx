@@ -26,11 +26,11 @@ const routes: Routes = [
     path: 'temas',
     title: 'Temas',
     loadChildren: () =>
-      import('./temas/temas.module').then((m) => m.TemasModule),
+      import('@sigma-nx/administrativo/temas').then((m) => m.TemasModule),
   },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
 })
-export class AdministrativoModule {}
+export class AdministrativoModule { }
