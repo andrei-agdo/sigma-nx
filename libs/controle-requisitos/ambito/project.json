@@ -1,0 +1,36 @@
+{
+  "name": "controle-requisitos-ambito",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/controle-requisitos/ambito/src",
+  "prefix": "sigma-nx",
+  "tags": [],
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/angular:ng-packagr-lite",
+      "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
+      "options": {
+        "project": "libs/controle-requisitos/ambito/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/controle-requisitos/ambito/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/controle-requisitos/ambito/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "libs/controle-requisitos/ambito/**/*.ts",
+          "libs/controle-requisitos/ambito/**/*.html"
+        ]
+      }
+    }
+  }
+}

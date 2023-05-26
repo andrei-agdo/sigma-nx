@@ -45,6 +45,9 @@
         "libs/components/search-button/src/index.ts"
       ],
       "@sigma-nx/components/table": ["libs/components/table/src/index.ts"],
+      "@sigma-nx/controle-requisitos/ambito": [
+        "libs/controle-requisitos/ambito/src/index.ts"
+      ],
       "@sigma-nx/dashboard": ["libs/dashboard/src/index.ts"],
       "@sigma-nx/material": ["libs/material/src/index.ts"],
       "@sigma-nx/services/http": ["libs/services/http/src/index.ts"],
