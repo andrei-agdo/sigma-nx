@@ -1,0 +1,20 @@
+{
+  "name": "monitoramento-licencas-fornecedor",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/monitoramento-licencas/fornecedor/src",
+  "prefix": "sigma-nx",
+  "tags": [],
+  "projectType": "library",
+  "targets": {
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "libs/monitoramento-licencas/fornecedor/**/*.ts",
+          "libs/monitoramento-licencas/fornecedor/**/*.html"
+        ]
+      }
+    }
+  }
+}

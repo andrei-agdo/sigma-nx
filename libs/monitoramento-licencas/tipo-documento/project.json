@@ -1,0 +1,20 @@
+{
+  "name": "monitoramento-licencas-tipo-documento",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/monitoramento-licencas/tipo-documento/src",
+  "prefix": "sigma-nx",
+  "tags": [],
+  "projectType": "library",
+  "targets": {
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "libs/monitoramento-licencas/tipo-documento/**/*.ts",
+          "libs/monitoramento-licencas/tipo-documento/**/*.html"
+        ]
+      }
+    }
+  }
+}

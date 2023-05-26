@@ -48,11 +48,38 @@
       "@sigma-nx/controle-requisitos/ambito": [
         "libs/controle-requisitos/ambito/src/index.ts"
       ],
+      "@sigma-nx/controle-requisitos/aplicabilidade": [
+        "libs/controle-requisitos/aplicabilidade/src/index.ts"
+      ],
+      "@sigma-nx/controle-requisitos/origem": [
+        "libs/controle-requisitos/origem/src/index.ts"
+      ],
+      "@sigma-nx/controle-requisitos/tipo-requisito": [
+        "libs/controle-requisitos/tipo-requisito/src/index.ts"
+      ],
       "@sigma-nx/dashboard": ["libs/dashboard/src/index.ts"],
       "@sigma-nx/material": ["libs/material/src/index.ts"],
+      "@sigma-nx/monitoramento-licencas/fornecedor": [
+        "libs/monitoramento-licencas/fornecedor/src/index.ts"
+      ],
+      "@sigma-nx/monitoramento-licencas/orgao-controle": [
+        "libs/monitoramento-licencas/orgao-controle/src/index.ts"
+      ],
+      "@sigma-nx/monitoramento-licencas/tipo-documento": [
+        "libs/monitoramento-licencas/tipo-documento/src/index.ts"
+      ],
       "@sigma-nx/services/http": ["libs/services/http/src/index.ts"],
       "@sigma-nx/services/modal": ["libs/services/modal/src/index.ts"],
       "@sigma-nx/shared": ["libs/shared/src/index.ts"],
+      "@sigma-nx/sismetro/fabricante": [
+        "libs/sismetro/fabricante/src/index.ts"
+      ],
+      "@sigma-nx/sismetro/tipo-equipamento": [
+        "libs/sismetro/tipo-equipamento/src/index.ts"
+      ],
+      "@sigma-nx/sismetro/unidade-medida": [
+        "libs/sismetro/unidade-medida/src/index.ts"
+      ],
       "@types/*": ["apps/sigma/src/app/shared/types/*"]
     }
   },

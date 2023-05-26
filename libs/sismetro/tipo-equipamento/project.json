@@ -1,0 +1,20 @@
+{
+  "name": "sismetro-tipo-equipamento",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/sismetro/tipo-equipamento/src",
+  "prefix": "sigma-nx",
+  "tags": [],
+  "projectType": "library",
+  "targets": {
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "libs/sismetro/tipo-equipamento/**/*.ts",
+          "libs/sismetro/tipo-equipamento/**/*.html"
+        ]
+      }
+    }
+  }
+}

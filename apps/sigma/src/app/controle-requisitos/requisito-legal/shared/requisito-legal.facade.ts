@@ -11,8 +11,7 @@ import { Observable, of } from 'rxjs';
 import { RequisitoLegalService } from './requisito-legal.service';
 import { Router } from '@angular/router';
 import { ModalService } from '@sigma-nx/services/modal';
-import { AmbitoService } from '../../ambito/shared/ambito.service';
-import { Ambito } from '../../ambito/shared/ambito';
+
 import { Atendimento } from './atendimento';
 
 import { DepartamentosService } from '@sigma-nx/administrativo/departamentos';
@@ -20,6 +19,7 @@ import { Departamento } from '@sigma-nx/administrativo/departamentos';
 import { MonitoramentoEControleDeLicencasService } from '../../../monitoramento-licencas/monitoramento-e-controle-de-licencas/shared/monitoramento-e-controle-de-licencas.service';
 import { Gestao, GestoesService } from '@sigma-nx/administrativo/gestoes';
 import { Tema, TemasService } from '@sigma-nx/administrativo/temas';
+import { AmbitoService } from '@sigma-nx/controle-requisitos/ambito';
 export class RequisitoLegalFacade {
 
   readonly temas$: Observable<Tema[]> = inject(TemasService).get({ ativo: true }, true);
@@ -47,8 +47,7 @@ export class RequisitoLegalFacade {
     { id: '2', codigo: '11753', nome: 'REDUÇÃO DE IMPACTO NA ÁREA DA DESCARGA DA CMP2 - EMISSÃO ATMOSFÉRICA' },
   ]);
 
-  readonly ambitos$: Observable<Ambito[]> = inject(AmbitoService
-  ).get({ ativo: true }, true);
+  readonly ambitos$ = inject(AmbitoService).get({ ativo: true }, true);
 
   readonly departamentos$: Observable<Departamento[]> =
     inject(DepartamentosService).get({ ativo: true }, true);

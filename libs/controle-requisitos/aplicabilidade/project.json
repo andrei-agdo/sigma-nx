@@ -1,0 +1,20 @@
+{
+  "name": "controle-requisitos-aplicabilidade",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/controle-requisitos/aplicabilidade/src",
+  "prefix": "sigma-nx",
+  "tags": [],
+  "projectType": "library",
+  "targets": {
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "libs/controle-requisitos/aplicabilidade/**/*.ts",
+          "libs/controle-requisitos/aplicabilidade/**/*.html"
+        ]
+      }
+    }
+  }
+}

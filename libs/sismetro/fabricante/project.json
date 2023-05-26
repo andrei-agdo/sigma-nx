@@ -1,0 +1,20 @@
+{
+  "name": "sismetro-fabricante",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/sismetro/fabricante/src",
+  "prefix": "sigma-nx",
+  "tags": [],
+  "projectType": "library",
+  "targets": {
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "libs/sismetro/fabricante/**/*.ts",
+          "libs/sismetro/fabricante/**/*.html"
+        ]
+      }
+    }
+  }
+}
