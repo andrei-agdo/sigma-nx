@@ -15,13 +15,13 @@ const routes: Routes = [
     path: 'fornecedores',
     title: 'Fornecedores',
     loadChildren: () =>
-      import('./fornecedor/fornecedor.module').then((m) => m.FornecedorModule),
+      import('@sigma-nx/monitoramento-licencas/fornecedor').then((m) => m.FornecedorModule),
   },
   {
     path: 'orgao-de-controle',
     title: 'Órgão de Controle',
     loadChildren: () =>
-      import('./orgao-controle/orgao-controle.module').then(
+      import('@sigma-nx/monitoramento-licencas/orgao-controle').then(
         (m) => m.OrgaoControleModule
       ),
   },
@@ -29,7 +29,7 @@ const routes: Routes = [
     path: 'tipo-documento',
     title: 'Tipo de Documento',
     loadChildren: () =>
-      import('./tipo-documento/tipo-documento.module').then(
+      import('@sigma-nx/monitoramento-licencas/tipo-documento').then(
         (m) => m.TipoDocumentoModule
       ),
   },

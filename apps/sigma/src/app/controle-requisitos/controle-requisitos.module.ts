@@ -14,19 +14,19 @@ const routes: Routes = [
   {
     path: 'tipo',
     title: 'Tipo requisito legal',
-    loadChildren: () => import('./tipo/tipo.module').then((m) => m.TipoModule),
+    loadChildren: () => import('@sigma-nx/controle-requisitos/tipo-requisito').then((m) => m.TipoModule),
   },
   {
     path: 'origem',
     title: 'Origem',
     loadChildren: () =>
-      import('./origem/origem.module').then((m) => m.OrigemModule),
+      import('@sigma-nx/controle-requisitos/origem').then((m) => m.OrigemModule),
   },
   {
     path: 'aplicabilidade',
     title: 'Aplicabilidade',
     loadChildren: () =>
-      import('./aplicabilidade/aplicabilidade.module').then(
+      import('@sigma-nx/controle-requisitos/aplicabilidade').then(
         (m) => m.AplicabilidadeModule
       ),
   },
@@ -40,4 +40,4 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forChild(routes)],
 })
-export class ControleRequisitosModule {}
+export class ControleRequisitosModule { }

@@ -6,7 +6,7 @@ export class AlertService {
   constructor(private snackBar: MatSnackBar) {}
 
   private show(
-    mensagem: string = '',
+    mensagem = '',
     type: 'success' | 'error' = 'success',
     tempoEmSegundos: number
   ): void {
@@ -18,10 +18,10 @@ export class AlertService {
     });
   }
 
-  success(mensagem: string = '', tempoEmSegundos: number = 3): void {
+  success(mensagem = '', tempoEmSegundos = 3): void {
     this.show(mensagem, 'success', tempoEmSegundos);
   }
-  error(mensagem: string = '', tempoEmSegundos: number = 3): void {
+  error(mensagem = '', tempoEmSegundos = 3): void {
     this.show(mensagem, 'error', tempoEmSegundos);
   }
 }

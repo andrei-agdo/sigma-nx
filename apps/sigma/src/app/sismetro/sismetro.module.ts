@@ -7,7 +7,7 @@ const routes: Routes = [
     path: 'tipo-equipamento',
     title: 'Tipo de Equipamento',
     loadChildren: () =>
-      import('./tipo-equipamento/tipo-equipamento.module').then(
+      import('@sigma-nx/sismetro/tipo-equipamento').then(
         (m) => m.TipoEquipamentoModule
       ),
   },
@@ -15,13 +15,13 @@ const routes: Routes = [
     path: 'fabricante',
     title: 'Fabricante',
     loadChildren: () =>
-      import('./fabricante/fabricante.module').then((m) => m.FabricanteModule),
+      import('@sigma-nx/sismetro/fabricante').then((m) => m.FabricanteModule),
   },
   {
     path: 'unidade-medida',
     title: 'Unidade de Medida',
     loadChildren: () =>
-      import('./unidade-medida/unidade-medida.module').then(
+      import('@sigma-nx/sismetro/unidade-medida').then(
         (m) => m.UnidadeMedidaModule
       ),
   },
