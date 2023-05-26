@@ -1,4 +1,4 @@
-import { Filter } from './../../../shared/filter';
+import { Filter } from './shared/filter';
 import { DepartamentosService } from './shared/departamentos.service';
 
 import { MatDialog } from '@angular/material/dialog';

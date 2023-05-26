@@ -1,3 +1,3 @@
-import { Base } from "../../../../shared/base";
+import { Base } from "./base";
 
 export type Gestao = Base;

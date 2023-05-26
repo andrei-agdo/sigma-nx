@@ -12,8 +12,8 @@ import { FilterButtonComponent } from '@sigma-nx/components/filter-button';
 import { CurrencyList } from '@core/utils/currency.config';
 import { InputModule } from '@sigma-nx/components/input';
 
-import { MaterialModule } from '@sigma-nx/material';
 import { SearchButtonComponent } from '@sigma-nx/components/search-button';
+import { MaterialModule } from '@sigma-nx/material';
 // Antes de colocar um item aqui faça a seguinte pergunta:
 
 // Esse componente/pipe/etc..., vai (ou poderá) ser utilizado em VÁRIOS lugares?

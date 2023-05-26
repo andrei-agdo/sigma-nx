@@ -1,4 +1,4 @@
-import { CrudService } from './../../../../shared/crud.service';
+import { CrudService } from "./crud.service";
 import { Tema } from './tema';
 import { Injectable } from '@angular/core';
 

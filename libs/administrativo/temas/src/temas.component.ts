@@ -1,9 +1,9 @@
+import { Filter } from './shared/filter';
 import { TemasService } from './shared/temas.service';
 import { MatDialog } from '@angular/material/dialog';
 import { TablePagination } from '@sigma-nx/components/table';
 import { Tema } from './shared/tema';
 import { Component } from '@angular/core';
-import { Filter } from 'libs/shared/filter';
 
 @Component({
   selector: 'sigma-nx-temas',

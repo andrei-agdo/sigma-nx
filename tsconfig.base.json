@@ -1,7 +1,7 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "rootDir": ".",
+    "rootDir": "./",
     "strictPropertyInitialization": false,
     "sourceMap": true,
     "declaration": false,
@@ -51,5 +51,7 @@
       "@types/*": ["apps/sigma/src/app/shared/types/*"]
     }
   },
-  "exclude": ["node_modules", "tmp"]
+  "exclude": ["node_modules", "tmp"],
+
+  "include": ["libs/*"]
 }
