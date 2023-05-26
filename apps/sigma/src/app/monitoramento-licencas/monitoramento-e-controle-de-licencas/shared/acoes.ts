@@ -1,7 +1,7 @@
 
 import { Departamento } from "@sigma-nx/administrativo/departamentos";
-import { Fornecedor } from "../../fornecedor/shared/fornecedor";
 import { Usuario } from "@sigma-nx/administrativo/usuarios";
+import { Fornecedor } from "@sigma-nx/monitoramento-licencas/fornecedor";
 
 export interface Acao {
   id: number;

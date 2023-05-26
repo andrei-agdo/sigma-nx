@@ -5,9 +5,9 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { SharedModule } from '@shared/shared.module';
 import { porcentagens } from '../shared/porcentagem';
 import { DepartamentosService } from '@sigma-nx/administrativo/departamentos';
-import { FornecedorService } from '../../../../fornecedor/shared/fornecedor.service';
 import { Acao } from '../../../shared/acoes';
 import { UsuariosService } from '@sigma-nx/administrativo/usuarios';
+import { FornecedorService } from '@sigma-nx/monitoramento-licencas/fornecedor';
 
 @Component({
   selector: 'sigma-nx-acao-dialog',

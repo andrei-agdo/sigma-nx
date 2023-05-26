@@ -1,5 +1,4 @@
 import { OrgaoControle } from '../../orgao-controle/shared/orgao-controle';
-import { Fornecedor } from '../../fornecedor/shared/fornecedor';
 import { Prazo } from './prazos';
 import { Acao } from './acoes';
 
@@ -7,6 +6,7 @@ import { RequisitoLegalSimplificado } from '../../../controle-requisitos/requisi
 import { Gestao } from '@sigma-nx/administrativo/gestoes';
 import { Tema } from '@sigma-nx/administrativo/temas';
 import { Usuario } from '@sigma-nx/administrativo/usuarios';
+import { Fornecedor } from '@sigma-nx/monitoramento-licencas/fornecedor';
 //TEMPORARIO
 interface Base {
   id?: string;

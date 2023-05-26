@@ -10,7 +10,7 @@ import { Atendimento } from './atendimento';
 import { DepartamentosService } from '@sigma-nx/administrativo/departamentos';
 import { Departamento } from '@sigma-nx/administrativo/departamentos';
 import { MonitoramentoEControleDeLicencasService } from '../../../monitoramento-licencas/monitoramento-e-controle-de-licencas/shared/monitoramento-e-controle-de-licencas.service';
-import { Gestao, GestoesService } from '@sigma-nx/administrativo/gestoes';
+import { GestoesService } from '@sigma-nx/administrativo/gestoes';
 import { Tema, TemasService } from '@sigma-nx/administrativo/temas';
 import { AmbitoService } from '@sigma-nx/controle-requisitos/ambito';
 import { AplicabilidadeService } from 'libs/controle-requisitos/aplicabilidade/src/lib/shared/aplicabilidade.service';
@@ -24,7 +24,7 @@ export class RequisitoLegalFacade {
 
   readonly origens$ = inject(OrigemService).get({ ativo: true }, true);
 
-  readonly gestoes$: Observable<Gestao[]> = inject(GestoesService).get({ ativo: true }, true);
+  readonly gestoes$ = inject(GestoesService).get({ ativo: true }, true);
 
   readonly aplicabilidades$ = inject(AplicabilidadeService).get({ ativo: true }, true);
 
