@@ -1,7 +1,7 @@
 import { Gestao } from '@sigma-nx/administrativo/gestoes';
-import { Usuario } from '../../../administrativo/usuarios/shared/usuario';
 import { OrgaoControle } from './../../orgao-controle/shared/orgao-controle';
 import { Tema } from '@sigma-nx/administrativo/temas';
+import { Usuario } from '@sigma-nx/administrativo/usuarios';
 
 // TEMPORARIO
 interface Base {

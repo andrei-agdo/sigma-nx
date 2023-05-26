@@ -3,10 +3,10 @@ import { Fornecedor } from '../../fornecedor/shared/fornecedor';
 import { Prazo } from './prazos';
 import { Acao } from './acoes';
 
-import { Usuario } from '../../../administrativo/usuarios/shared/usuario';
 import { RequisitoLegalSimplificado } from '../../../controle-requisitos/requisito-legal/shared/requisito-legal-simplificado';
 import { Gestao } from '@sigma-nx/administrativo/gestoes';
 import { Tema } from '@sigma-nx/administrativo/temas';
+import { Usuario } from '@sigma-nx/administrativo/usuarios';
 //TEMPORARIO
 interface Base {
   id?: string;

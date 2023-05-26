@@ -4,9 +4,9 @@ import { OrgaoControleService } from '../../orgao-controle/shared/orgao-controle
 import { MonitoramentoEControleDeLicencasService } from './monitoramento-e-controle-de-licencas.service';
 import { FornecedorService } from '../../fornecedor/shared/fornecedor.service';
 import { TipoDocumentoService } from '../../tipo-documento/shared/tipo-documento.service';
-import { UsuariosService } from '../../../administrativo/usuarios/shared/usuarios.service';
 import { GestoesService } from '@sigma-nx/administrativo/gestoes';
 import { ModalService } from '@sigma-nx/services/modal';
+import { UsuariosService } from '@sigma-nx/administrativo/usuarios';
 
 export class MonitoramentoFacade {
   readonly temas$ = inject(TemasService).get({

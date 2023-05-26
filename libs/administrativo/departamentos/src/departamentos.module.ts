@@ -10,6 +10,7 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { TableModule } from '@sigma-nx/components/table';
 import { InputModule } from '@sigma-nx/components/input';
 import { FormsModule } from '@angular/forms';
+import {MatSliderModule} from '@angular/material/slider';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { FormsModule } from '@angular/forms';
   ],
   imports: [
     CommonModule,
+    MatSliderModule,
     DepartamentosRoutingModule,
     TableModule,
     FilterButtonComponent,
