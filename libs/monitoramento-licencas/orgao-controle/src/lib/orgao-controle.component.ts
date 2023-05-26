@@ -3,7 +3,7 @@ import { OrgaoControleService } from './shared/orgao-controle.service';
 import { MatDialog } from '@angular/material/dialog';
 import { TablePagination } from '@sigma-nx/components/table';
 import { OrgaoControle } from './shared/orgao-controle';
-import { Filter } from './../../shared/models/filter';
+import { Filter } from '@sigma-nx/shared';
 import { Component } from '@angular/core';
 
 @Component({
