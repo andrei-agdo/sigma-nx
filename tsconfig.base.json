@@ -45,6 +45,7 @@
         "libs/components/search-button/src/index.ts"
       ],
       "@sigma-nx/components/table": ["libs/components/table/src/index.ts"],
+      "@sigma-nx/dashboard": ["libs/dashboard/src/index.ts"],
       "@sigma-nx/material": ["libs/material/src/index.ts"],
       "@sigma-nx/services/http": ["libs/services/http/src/index.ts"],
       "@sigma-nx/services/modal": ["libs/services/modal/src/index.ts"],

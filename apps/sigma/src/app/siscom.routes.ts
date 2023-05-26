@@ -12,7 +12,7 @@ const routes: Routes = [
         path: 'dashboard',
         title: 'Dashboard',
         loadChildren: () =>
-          import('./dashboard/dashboard.module').then((m) => m.DashboardModule),
+          import('@sigma-nx/dashboard').then((m) => m.DashboardModule),
       },
       {
         path: 'controle-requisitos',
