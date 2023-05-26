@@ -1,5 +1,5 @@
 
-import { Departamento } from "../../../administrativo/departamentos/shared/departamento";
+import { Departamento } from "@sigma-nx/administrativo/departamentos";
 import { Usuario } from "../../../administrativo/usuarios/shared/usuario";
 import { Fornecedor } from "../../fornecedor/shared/fornecedor";
 

@@ -17,8 +17,9 @@ import { ModalService } from '@shared/components/modal/modal.service';
 import { AmbitoService } from '../../ambito/shared/ambito.service';
 import { Ambito } from '../../ambito/shared/ambito';
 import { Atendimento } from './atendimento';
-import { Departamento } from '../../../administrativo/departamentos/shared/departamento';
-import { DepartamentosService } from '../../../administrativo/departamentos/shared/departamentos.service';
+
+import { DepartamentosService } from '@sigma-nx/administrativo/departamentos';
+import { Departamento } from '@sigma-nx/administrativo/departamentos';
 import { MonitoramentoEControleDeLicencasService } from '../../../monitoramento-licencas/monitoramento-e-controle-de-licencas/shared/monitoramento-e-controle-de-licencas.service';
 
 export class RequisitoLegalFacade {

@@ -1,0 +1,50 @@
+{
+  "name": "services-modal",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/services/modal/src",
+  "prefix": "sigma-nx",
+  "tags": [],
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/angular:ng-packagr-lite",
+      "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
+      "options": {
+        "project": "libs/services/modal/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/services/modal/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/services/modal/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "libs/services/modal/jest.config.ts",
+        "passWithNoTests": true
+      },
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "codeCoverage": true
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "libs/services/modal/**/*.ts",
+          "libs/services/modal/**/*.html"
+        ]
+      }
+    }
+  }
+}

@@ -1,6 +1,6 @@
+import { CrudService } from './../../../../../shared/crud.service';
 import { Departamento } from './departamento';
 import { Injectable } from '@angular/core';
-import { CrudService } from '@core/services/crud.service';
 
 @Injectable({
   providedIn: 'root',

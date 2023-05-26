@@ -1,0 +1,9 @@
+<div class='modal' [class.success]='data.image==="success"' [class.error]='data.image==="error"'>
+  <div class="right">
+    <button mat-button [mat-dialog-close]=""><mat-icon>close</mat-icon></button>
+  </div>
+  <div class='image'>
+    <img src='assets/images/{{data.image}}.gif'>
+  </div>
+  {{data.message}}
+</div>

@@ -111,7 +111,7 @@ export class MenuComponent {
           {
             moduloParentId: '31f912a7-7c96-4c64-885c-69a54855014e',
             descricao: 'Monitoramento e controle',
-            // rota: '/monitoramento-licencas/monitoramento-e-controle-de-licencas',
+            rota: '/monitoramento-licencas/monitoramento-e-controle-de-licencas',
             ordem: 1,
             modulosParent: [],
             id: '2967b43a-458e-4494-ac4b-018828571599',

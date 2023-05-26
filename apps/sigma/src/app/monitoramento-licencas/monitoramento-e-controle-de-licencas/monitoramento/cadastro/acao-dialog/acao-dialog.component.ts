@@ -5,7 +5,7 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { SharedModule } from '@shared/shared.module';
 import { porcentagens } from '../shared/porcentagem';
 import { UsuariosService } from 'apps/sigma/src/app/administrativo/usuarios/shared/usuarios.service';
-import { DepartamentosService } from 'apps/sigma/src/app/administrativo/departamentos/shared/departamentos.service';
+import { DepartamentosService } from '@sigma-nx/administrativo/departamentos';
 import { FornecedorService } from '../../../../fornecedor/shared/fornecedor.service';
 import { Acao } from '../../../shared/acoes';
 

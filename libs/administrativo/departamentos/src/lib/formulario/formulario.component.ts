@@ -1,4 +1,4 @@
-import { ModalService } from '@shared/components/modal/modal.service';
+import { ModalService } from '@sigma-nx/services/modal';
 import { DepartamentosService } from './../shared/departamentos.service';
 import { FormComponent, InputModule } from '@sigma-nx/components/input';
 import { MAT_DIALOG_DATA, MatDialogModule, MatDialogRef } from '@angular/material/dialog';

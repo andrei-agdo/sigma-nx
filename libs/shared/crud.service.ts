@@ -16,7 +16,7 @@ interface AtualizacaoAtivo {
 export class CrudService<T extends Base, TSimplificado extends Base = T, TFilter extends Base = T> {
   protected http: Http = inject(Http);
 
-  constructor(private route: string) { }
+  constructor(@Inject(String) private route: string) { }
 
   public mapGet = (filter?: Filter & Partial<TFilter>): {
     [k: string]: string | number | boolean;
