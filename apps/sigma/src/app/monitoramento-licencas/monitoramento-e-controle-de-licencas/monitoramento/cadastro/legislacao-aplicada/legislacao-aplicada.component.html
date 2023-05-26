@@ -1,4 +1,4 @@
-<sigma-nx-input label='Legislação Aplicada' (input)="search($event.target.value)" (ngModelChange)="addLegislacaoAplicada($event)" type='autocomplete' [options]="legislacoes()" optionLabel="tema" optionValue='id' [hideHint]="true">
+<sigma-nx-input label='Legislação Aplicada' (input)="search($event)" (ngModelChange)="addLegislacaoAplicada($event)" type='autocomplete' [options]="legislacoes()" optionLabel="tema" optionValue='id' [hideHint]="true">
   <ng-template #itemTemplate let-legislacao>
     N° {{ legislacao.numero }} | Tema: N°{{ legislacao.numeroPasta }} - {{ legislacao.tema}}
   </ng-template>

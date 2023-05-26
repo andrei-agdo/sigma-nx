@@ -70,7 +70,7 @@
 
   <div class="mb-20 row mobile">
     <div>
-      <sigma-nx-input label='GACP' [required]="gacpObrigatorio" [error]='gacpObrigatorio && requisitoLegal.gacpsId?.length==0' type='autocomplete' optionLabel="nome" [options]="gacps()" (input)="termGacp.set($event.target.value)" (ngModelChange)="addGacp($event)">
+      <sigma-nx-input label='GACP' [required]="gacpObrigatorio" [error]='gacpObrigatorio && requisitoLegal.gacpsId?.length===0' type='autocomplete' optionLabel="nome" [options]="gacps()" (input)="setTermGacp($event)" (ngModelChange)="addGacp($event)">
         <span error>Quando possuir um antendimento, é necessário selecionar um GACP</span>
 
         <ng-template let-gacp #itemTemplate>
@@ -92,7 +92,7 @@
       <br>
     </div>
     <div>
-      <sigma-nx-input label='Evidências de atendimento PM' type='autocomplete' optionLabel="nome" [options]="evidencias()" (input)="termEvidencia.set($event.target.value)" (ngModelChange)="addEvidencia($event)">
+      <sigma-nx-input label='Evidências de atendimento PM' type='autocomplete' optionLabel="nome" [options]="evidencias()" (input)="setTermEvidencias($event)" (ngModelChange)="addEvidencia($event)">
 
         <ng-template let-evidencia #itemTemplate>
           <div class="row">

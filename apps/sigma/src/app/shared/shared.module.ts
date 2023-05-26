@@ -1,4 +1,3 @@
-import { MaterialModule } from '@sigma-nx/material';
 import { CustomPaginator } from '@core/services/customPaginatorConfiguration';
 import { MatPaginatorIntl } from '@angular/material/paginator';
 import { ModalService } from './components/modal/modal.service';
@@ -8,15 +7,15 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxMaskModule } from 'ngx-mask';
 import { FormComponent } from './components/form/form.component';
-import { InputComponent } from './components/input/input.component';
-
 import { ButtonComponent } from './components/button/button.component';
 import { TableModule } from './components/table/table.module';
 import { FilterButtonComponent } from './components/filter-button/filter-button.component';
 import { SearchButtonComponent } from './components/search-button/search-button.component';
 import { ModalComponent } from './components/modal/modal.component';
 import { CurrencyList } from '@core/utils/currency.config';
+import { InputModule } from '@sigma-nx/components/input';
 
+import { MaterialModule } from '@sigma-nx/material';
 // Antes de colocar um item aqui faça a seguinte pergunta:
 
 // Esse componente/pipe/etc..., vai (ou poderá) ser utilizado em VÁRIOS lugares?
@@ -34,14 +33,12 @@ import { CurrencyList } from '@core/utils/currency.config';
 // Aqui é SE E SOMENTE SE o componente/pipe/etc... for utilizado em 2 ou mais componentes
 
 @NgModule({
-  imports: [
-    MaterialModule,
+  imports: [MaterialModule,
     CommonModule,
     ReactiveFormsModule,
     NgxMaskModule.forRoot(),
   ],
   declarations: [
-    InputComponent,
     FormComponent,
     ButtonComponent,
     AlertComponent,
@@ -51,8 +48,8 @@ import { CurrencyList } from '@core/utils/currency.config';
   ],
   exports: [
     MaterialModule,
+    InputModule,
     CommonModule,
-    InputComponent,
     FormComponent,
     NgxMaskModule,
     ButtonComponent,

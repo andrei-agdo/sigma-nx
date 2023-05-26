@@ -52,9 +52,9 @@ export class LegislacaoAplicadaComponent {
   @Input({ required: true }) legislacaoAplicada: RequisitoLegalSimplificado[] = [];
   @Output() legislacaoAplicadaChange = new EventEmitter<RequisitoLegalSimplificado[]>();
 
-  search(term: string) {
+  search(term: any) {
     this.filter.mutate(f => {
-      f.palavraChave = term;
+      f.palavraChave = term.target.value;
     });
   }
   trazerTodos = false;

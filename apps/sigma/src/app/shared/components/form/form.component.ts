@@ -5,7 +5,7 @@ import {
   ContentChildren,
   QueryList,
 } from '@angular/core';
-import { InputComponent } from '../input/input.component';
+import { InputComponent } from '@sigma-nx/components/input';
 
 @Component({
   selector: 'sigma-nx-form',

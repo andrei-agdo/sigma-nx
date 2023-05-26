@@ -93,6 +93,14 @@ export class FormularioComponent extends RequisitoLegalFacade implements OnInit 
     );
   }
 
+  setTermGacp($event: any) {
+    this.termGacp.set($event.target.value)
+  }
+
+  setTermEvidencias($event: any) {
+    this.termGacp.set($event.target.value)
+  }
+
   selectTema(temaId: string, temas: Tema[]) {
     queueMicrotask(() => {
       const tema = temas.find((tema) => tema.id === temaId);
