@@ -2,7 +2,6 @@
 import { TableModule } from '@sigma-nx/components/table';
 import { CustomPaginator } from '@core/services/customPaginatorConfiguration';
 import { MatPaginatorIntl } from '@angular/material/paginator';
-import { ModalService } from './components/modal/modal.service';
 import { AlertService, AlertComponent } from './services/alert.service';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
@@ -10,7 +9,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxMaskModule } from 'ngx-mask';
 import { FormComponent } from '@sigma-nx/components/input';
 import { FilterButtonComponent } from '@sigma-nx/components/filter-button';
-import { ModalComponent } from './components/modal/modal.component';
 import { CurrencyList } from '@core/utils/currency.config';
 import { InputModule } from '@sigma-nx/components/input';
 
@@ -43,7 +41,6 @@ import { SearchButtonComponent } from '@sigma-nx/components/search-button';
   ],
   declarations: [
     AlertComponent,
-    ModalComponent,
   ],
   exports: [
     MaterialModule,
@@ -57,9 +54,7 @@ import { SearchButtonComponent } from '@sigma-nx/components/search-button';
     SearchButtonComponent
   ],
   providers: [
-
     AlertService,
-    ModalService,
     ...CurrencyList,
     { provide: MatPaginatorIntl, useValue: CustomPaginator() },
   ],

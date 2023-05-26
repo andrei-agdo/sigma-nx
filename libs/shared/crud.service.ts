@@ -1,7 +1,7 @@
 import { Observable } from 'rxjs';
 import { Filter } from './filter';
 import { Injectable, inject, Inject } from '@angular/core';
-import { Http } from '../services/http/src';
+import { Http } from '../services/http/src/lib/http.service';
 import { Base } from './base';
 
 interface AtualizacaoAtivo {

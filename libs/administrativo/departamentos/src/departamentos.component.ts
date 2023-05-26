@@ -1,8 +1,8 @@
+import { Filter } from './../../../shared/filter';
 import { DepartamentosService } from './shared/departamentos.service';
 
 import { MatDialog } from '@angular/material/dialog';
 import { TablePagination } from '@sigma-nx/components/table';
-import { Filter } from '../../../../shared/filter';
 import { Component } from '@angular/core';
 import { Departamento } from './shared/departamento';
 

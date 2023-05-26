@@ -1,10 +1,9 @@
 import { TemasService } from './shared/temas.service';
-import { load } from '@core/utils/load/load.component';
 import { MatDialog } from '@angular/material/dialog';
 import { TablePagination } from '@sigma-nx/components/table';
-import { Filter } from '@shared/models/filter';
 import { Tema } from './shared/tema';
 import { Component } from '@angular/core';
+import { Filter } from 'libs/shared/filter';
 
 @Component({
   selector: 'sigma-nx-temas',
@@ -38,19 +37,14 @@ export class TemasComponent {
   getTemas(resetPage = false) {
     if (resetPage) this.filter.pagina = 0;
 
-    load.show();
 
     this.temasService.get(this.filter).subscribe((temas) => {
       this.temas = temas;
-      load.hide();
     });
   }
 
   changeStatus(tema: Tema) {
-    load.show();
-    this.temasService.atualizarAtivo(tema).subscribe(() => {
-      load.hide();
-    });
+    this.temasService.atualizarAtivo(tema).subscribe();
   }
 
   changePage(page: TablePagination) {

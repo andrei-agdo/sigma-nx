@@ -1,4 +1,5 @@
-import { CrudService } from 'libs/shared/crud.service';
+import { CrudService } from './../../../../shared/crud.service';
+
 import { Gestao } from './gestao';
 import { Injectable } from '@angular/core';
 
