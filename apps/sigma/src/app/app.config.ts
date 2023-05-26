@@ -12,7 +12,7 @@ import {
 } from '@angular/router';
 import { appRoutes } from './app.routes';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpModule } from '@sigma-nx/services/http';
+import { HttpModule } from '@sigma-nx/services/modal';
 
 export const appConfig: ApplicationConfig = {
   providers: [

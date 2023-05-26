@@ -47,7 +47,7 @@ export class FormularioComponent extends MonitoramentoFacade implements OnInit {
   createMonitoramentoControleLicenca(form: FormComponent) {
     if (!form.valid()) return;
 
-    this.monitoramentoService.create(this.monitoramentoControleLicenca).subscribe((id) => {
+    this.monitoramentoService.create(this.monitoramentoControleLicenca).subscribe((id:any) => {
       this.monitoramentoControleLicenca.id = id;
       this.monitoramentoService.monitoramento.next(this.monitoramentoControleLicenca);
       this.router.navigateByUrl(`/monitoramento-licencas/monitoramento-e-controle-de-licencas/${id}/editar`)

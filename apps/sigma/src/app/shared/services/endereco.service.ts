@@ -1,4 +1,4 @@
-import { Http } from '@sigma-nx/services/http';
+import { Http } from '@sigma-nx/services/modal';
 import { Injectable } from '@angular/core';
 import { Observable, map, of } from 'rxjs';
 import { Address, Endereco, Estado } from '@shared/models/endereco';

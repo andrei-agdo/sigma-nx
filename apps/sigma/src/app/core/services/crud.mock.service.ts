@@ -1,7 +1,7 @@
 import { Observable, map } from 'rxjs';
 import { Filter } from '@shared/models/filter';
 import { Injectable, inject, Inject } from '@angular/core';
-import { HttpMock } from '@sigma-nx/services/http';
+import { HttpMock } from '@sigma-nx/services/modal';
 
 interface AtualizacaoAtivo {
   readonly id: string;
@@ -44,12 +44,12 @@ export class CrudMockService<T extends Base, TSimplificado extends Base = T> {
   public get(filter?: Filter & Partial<T>): Observable<TSimplificado[]> {
     return this.http.get<TSimplificado[]>(this.route, {
       params: this.mapGet(filter),
-    }).pipe(map((x) => {
-      x.forEach(y => y.id = y._id);
+    }).pipe(map((x:any) => {
+      x.forEach((y:any) => y.id = y._id);
       return x;
     }));;
   }
-  public filter(filter?: Filter & Partial<T>) {
+  public filter(filter?: Filter & Partial<T>): Observable<any[]> {
     return this.http.post<any, any[]>(this.route + '/find', filter);
   }
 

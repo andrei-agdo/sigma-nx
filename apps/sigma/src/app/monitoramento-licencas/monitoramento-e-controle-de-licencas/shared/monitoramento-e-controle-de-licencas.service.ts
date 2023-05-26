@@ -20,7 +20,7 @@ export class MonitoramentoEControleDeLicencasService extends CrudMockService<
   }
 
   create(item: MonitoramentoEControleDeLicenca) {
-    return this.http.post<MonitoramentoEControleDeLicenca>('/monitoramento-controle-de-licencas', item).pipe(map((x) => {
+    return this.http.post<MonitoramentoEControleDeLicenca>('/monitoramento-controle-de-licencas', item).pipe(map((x:any) => {
       return x._id
     }))
   }
