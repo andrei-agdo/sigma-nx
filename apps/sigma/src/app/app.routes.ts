@@ -19,12 +19,5 @@ export const appRoutes: Route[] = [
     },
     loadChildren: () =>
       import('./siscom.routes').then((m) => m.SiscomRoutingModule),
-  },
-  {
-    path: 'dev-page',
-    loadComponent: () =>
-      import('./core/dev-page/dev-page.component').then(
-        (c) => c.DevPageComponent
-      ),
-  },
+  }
 ];;

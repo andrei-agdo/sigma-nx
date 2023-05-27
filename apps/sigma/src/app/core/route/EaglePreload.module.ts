@@ -7,10 +7,12 @@ import { PreloadingStrategy, Route, Router } from '@angular/router';
 import { Observable, of, timer } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class EaglePreload implements PreloadingStrategy {
 
-  private router: Router = inject(Router);
+  private router = inject(Router);
 
   preload(route: Route, load: () => Observable<unknown>): Observable<unknown> {
     const preloadCondition =

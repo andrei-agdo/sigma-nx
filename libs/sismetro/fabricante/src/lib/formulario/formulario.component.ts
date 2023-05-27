@@ -6,7 +6,7 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { Fabricante } from './../shared/fabricante';
 import { FormularioModule } from '@sigma-nx/shared';
 import { Component, Inject } from '@angular/core';
-import { EnderecoService } from '@shared/services/endereco.service';
+import { EnderecoService } from '@sigma-nx/shared';
 
 @Component({
   selector: 'sigma-nx-formulario',
@@ -48,7 +48,7 @@ export class FormularioComponent {
     public dialogRef: MatDialogRef<FormularioComponent, boolean>,
     private enderecoService: EnderecoService,
     private modalService: ModalService
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     if (this.data.fabricante?.id)
@@ -81,8 +81,8 @@ export class FormularioComponent {
 
         this.modalService.success(
           'Fabricante ' +
-            (!this.fabricante.id ? 'cadastrado' : 'editado') +
-            ' com sucesso'
+          (!this.fabricante.id ? 'cadastrado' : 'editado') +
+          ' com sucesso'
         );
         this.dialogRef.close(true);
       },
