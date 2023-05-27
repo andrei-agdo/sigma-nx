@@ -1,5 +1,5 @@
 import { Observable } from 'rxjs';
-import { Filter } from '@shared/models/filter';
+import { Filter } from '@sigma-nx/shared';
 import { Injectable, inject, Inject } from '@angular/core';
 import { Http } from '@sigma-nx/services/http';
 import { Base } from '@sigma-nx/shared';

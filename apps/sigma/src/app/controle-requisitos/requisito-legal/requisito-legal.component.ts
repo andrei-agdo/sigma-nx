@@ -1,11 +1,10 @@
 import { load } from '@core/utils/load/load.component';
 import { TablePagination } from '@sigma-nx/components/table';
-import { Filter } from '@shared/models/filter';
-import { Component, inject } from '@angular/core';
+import { Filter } from '@sigma-nx/shared';
+import { Component} from '@angular/core';
 import { RequisitoLegalFacade } from './shared/requisito-legal.facade';
 import { RequisitoLegalSimplificado } from './shared/requisito-legal-simplificado';
 import { RequisitoLegalFilter } from './shared/requisito-legal-filter';
-import { ModalService } from '@sigma-nx/services/modal';
 
 @Component({
   selector: 'sigma-nx-requisito-legal',

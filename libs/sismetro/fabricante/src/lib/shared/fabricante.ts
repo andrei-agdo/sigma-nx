@@ -1,6 +1,6 @@
 import { Base } from '@sigma-nx/shared';
-import { Endereco } from '@shared/models/endereco';
-import { Telefone } from '@shared/models/telefone';
+import { Endereco } from '@sigma-nx/shared';
+import { Telefone } from '@sigma-nx/shared';
 
 export interface Fabricante extends Base {
   cnpj?: string;

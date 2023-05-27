@@ -1,6 +1,6 @@
 import { environment } from '@environments/environment';
 import { RequisitoLegal } from './requisito-legal';
-import { Filter } from '@shared/models/filter';
+import { Filter } from '@sigma-nx/shared';
 import { Injectable } from '@angular/core';
 import { CrudService } from '@core/services/crud.service';
 import { RequisitoLegalSimplificado } from './requisito-legal-simplificado';

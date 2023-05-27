@@ -9,7 +9,7 @@ export const appRoutes: Route[] = [
   {
     path: 'login',
     loadComponent: () =>
-      import('./login/login.component').then((c) => c.LoginComponent),
+      import('@sigma-nx/login').then((c) => c.LoginComponent),
   },
   {
     path: '',

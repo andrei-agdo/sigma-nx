@@ -58,6 +58,7 @@
         "libs/controle-requisitos/tipo-requisito/src/index.ts"
       ],
       "@sigma-nx/dashboard": ["libs/dashboard/src/index.ts"],
+      "@sigma-nx/login": ["libs/login/src/index.ts"],
       "@sigma-nx/monitoramento-licencas/fornecedor": [
         "libs/monitoramento-licencas/fornecedor/src/index.ts"
       ],

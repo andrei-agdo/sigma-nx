@@ -1,6 +1,6 @@
 import { TablePagination } from '@sigma-nx/components/table';
 import { load } from '@core/utils/load/load.component';
-import { Filter } from '@shared/models/filter';
+import { Filter } from '@sigma-nx/shared';
 import { Component, inject } from '@angular/core';
 import { MonitoramentoEControleDeLicenca } from '../shared/monitoramento-e-controle-de-licencas';
 import { MonitoramentoEControleDeLicencasService } from '../shared/monitoramento-e-controle-de-licencas.service';
@@ -37,7 +37,9 @@ export class MonitoramentoControleLicencaComponent extends MonitoramentoFacade {
     this.getMonitoramentoControleLicencas();
   }
 
-  exportAsExcel() { }
+  exportAsExcel() {
+    alert("exportAsExcel");
+   }
 
   getMonitoramentoControleLicencas(resetPage = false) {
     if (resetPage) this.filter.pagina = 0;

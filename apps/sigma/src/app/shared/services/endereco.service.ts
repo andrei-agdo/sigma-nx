@@ -1,7 +1,7 @@
 import { Http } from '@sigma-nx/services/http';
 import { Injectable } from '@angular/core';
 import { Observable, map, of } from 'rxjs';
-import { Address, Endereco, Estado } from '@shared/models/endereco';
+import { Address, Endereco, Estado } from '@sigma-nx/shared';
 
 @Injectable({
   providedIn: 'root',
