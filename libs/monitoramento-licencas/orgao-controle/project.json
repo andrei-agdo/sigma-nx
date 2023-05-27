@@ -1,5 +1,5 @@
 {
-  "name": "monitoramento-licencas-orgao-controle",
+  "name": "orgao-controle",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/monitoramento-licencas/orgao-controle/src",
   "prefix": "sigma-nx",

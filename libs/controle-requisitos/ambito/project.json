@@ -1,5 +1,5 @@
 {
-  "name": "controle-requisitos-ambito",
+  "name": "ambito",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/controle-requisitos/ambito/src",
   "prefix": "sigma-nx",

@@ -1,5 +1,5 @@
 {
-  "name": "controle-requisitos-origem",
+  "name": "origem",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/controle-requisitos/origem/src",
   "prefix": "sigma-nx",

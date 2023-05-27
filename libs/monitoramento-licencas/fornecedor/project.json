@@ -1,5 +1,5 @@
 {
-  "name": "monitoramento-licencas-fornecedor",
+  "name": "fornecedor",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/monitoramento-licencas/fornecedor/src",
   "prefix": "sigma-nx",

@@ -1,5 +1,5 @@
 {
-  "name": "sismetro-fabricante",
+  "name": "fabricante",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/sismetro/fabricante/src",
   "prefix": "sigma-nx",

@@ -1,5 +1,5 @@
 {
-  "name": "administrativo-temas",
+  "name": "temas",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/administrativo/temas/src",
   "prefix": "sigma-nx",

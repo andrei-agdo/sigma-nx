@@ -1,5 +1,5 @@
 {
-  "name": "administrativo-usuarios",
+  "name": "usuarios",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/administrativo/usuarios/src",
   "prefix": "sigma-nx",

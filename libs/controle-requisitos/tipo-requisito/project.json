@@ -1,5 +1,5 @@
 {
-  "name": "controle-requisitos-tipo-requisito",
+  "name": "tipo-requisito",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/controle-requisitos/tipo-requisito/src",
   "prefix": "sigma-nx",

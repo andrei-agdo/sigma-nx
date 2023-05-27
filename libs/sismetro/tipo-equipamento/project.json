@@ -1,5 +1,5 @@
 {
-  "name": "sismetro-tipo-equipamento",
+  "name": "tipo-equipamento",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/sismetro/tipo-equipamento/src",
   "prefix": "sigma-nx",

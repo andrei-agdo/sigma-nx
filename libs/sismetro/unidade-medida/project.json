@@ -1,5 +1,5 @@
 {
-  "name": "sismetro-unidade-medida",
+  "name": "unidade-medida",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/sismetro/unidade-medida/src",
   "prefix": "sigma-nx",

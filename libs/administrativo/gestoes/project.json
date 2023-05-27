@@ -1,5 +1,5 @@
 {
-  "name": "administrativo-gestoes",
+  "name": "gestoes",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/administrativo/gestoes/src",
   "prefix": "sigma-nx",
