@@ -1,8 +1,8 @@
-import { Injectable, Component, inject } from '@angular/core';
+import { Injectable, Component } from '@angular/core';
 import { MatSnackBar, MatSnackBarRef } from '@angular/material/snack-bar';
 
 @Injectable()
-export class AlertServices {
+export class AlertService {
   constructor(private snackBar: MatSnackBar) {}
 
   private show(

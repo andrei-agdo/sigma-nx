@@ -2,7 +2,7 @@
 import { TableModule } from '@sigma-nx/components/table';
 import { CustomPaginator } from '@core/services/customPaginatorConfiguration';
 import { MatPaginatorIntl } from '@angular/material/paginator';
-import { AlertService, AlertComponent } from './services/alert.service';
+import {  AlertComponent } from './services/alert.service';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -40,8 +40,6 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MAT_SNACK_BAR_DEFAULT_OPTIONS } from '@angular/material/snack-bar';
 
-
-
 import {
   MatDialogModule,
   MatDialogRef,
@@ -50,7 +48,6 @@ import {
 } from '@angular/material/dialog';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
-import { MatMenuModule } from '@angular/material/menu';
 import { ModalService } from '@sigma-nx/services/modal';
 
 @NgModule({
@@ -74,7 +71,6 @@ import { ModalService } from '@sigma-nx/services/modal';
     FormComponent,
     FilterButtonComponent,
     SearchButtonComponent,
-    MatMenuModule,
     MatSlideToggleModule,
     MatSelectModule,
     MatIconModule,
@@ -89,7 +85,6 @@ import { ModalService } from '@sigma-nx/services/modal';
     MatSidenavModule
   ],
   providers: [
-    AlertService,
     ModalService,
     ...CurrencyList,
     { provide: MatPaginatorIntl, useValue: CustomPaginator() },

@@ -1,10 +1,9 @@
-import { AuthService } from '@core/services/auth.service';
+import { AuthService } from './auth.service';
 import { AuthLogin } from './auth.interface';
 import { LoginService } from './login.service';
-import { AlertService } from '@shared/services/alert.service';
+import { AlertService } from './alert.service';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { load } from '@core/utils/load/load.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
@@ -49,17 +48,14 @@ export class LoginComponent {
     if (!this.authLogin.login || !this.authLogin.password)
       return this.alertService.error('Preencha os dados.');
 
-    load.show();
     this.authService.authenticate(this.authLogin).subscribe({
       next: () => {
         this.router.navigate(['dashboard']).then(() => {
           this.alertService.success('Login feito.');
-          load.hide();
         });
       },
       error: (err) => {
         this.alertService.error(err.error);
-        load.hide();
       },
     });
   }
